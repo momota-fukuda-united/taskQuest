@@ -6,11 +6,13 @@
 //  Copyright © 2020 momota-fukuda. All rights reserved.
 //
 
+import Foundation
 import UIKit
 
 class StatusView: UIView {
-    
-    static let className = String(describing: type(of: self))
+    var className: String {
+        return String(describing: type(of: self))
+    }
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -31,9 +33,9 @@ class StatusView: UIView {
          // Drawing code
      }
      */
-
-    func loadNib() {
-        let nib = UINib(nibName: StatusView.className, bundle: Bundle.main)
+    
+    func loadNib() {        
+        let nib = UINib(nibName: self.className, bundle: Bundle.main)
         let statusView = nib.instantiate(withOwner: self, options: nil).first! as! UIView
         statusView.frame = self.bounds
         self.addSubview(statusView)
