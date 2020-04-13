@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -13,9 +13,13 @@
 		A03410DC24442C140051DAF1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A03410DA24442C140051DAF1 /* Main.storyboard */; };
 		A03410DE24442C160051DAF1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A03410DD24442C160051DAF1 /* Assets.xcassets */; };
 		A03410E124442C160051DAF1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A03410DF24442C160051DAF1 /* LaunchScreen.storyboard */; };
+		E23FC521FD7D33A376BA1AEC /* Pods_taskQuest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4F373A54D0A3C4A324828662 /* Pods_taskQuest.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		23142341D111A647C9E4B5CC /* Pods-taskQuest.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-taskQuest.release.xcconfig"; path = "Target Support Files/Pods-taskQuest/Pods-taskQuest.release.xcconfig"; sourceTree = "<group>"; };
+		3F300E4E93DE14F2CD115CD8 /* Pods-taskQuest.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-taskQuest.debug.xcconfig"; path = "Target Support Files/Pods-taskQuest/Pods-taskQuest.debug.xcconfig"; sourceTree = "<group>"; };
+		4F373A54D0A3C4A324828662 /* Pods_taskQuest.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_taskQuest.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A03410D124442C140051DAF1 /* taskQuest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = taskQuest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A03410D424442C140051DAF1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A03410D624442C140051DAF1 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -31,17 +35,37 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E23FC521FD7D33A376BA1AEC /* Pods_taskQuest.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0B886F1ADD39791A0A2EC41E /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				3F300E4E93DE14F2CD115CD8 /* Pods-taskQuest.debug.xcconfig */,
+				23142341D111A647C9E4B5CC /* Pods-taskQuest.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		5A06F05C3D4F9013DC9F77D3 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				4F373A54D0A3C4A324828662 /* Pods_taskQuest.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		A03410C824442C140051DAF1 = {
 			isa = PBXGroup;
 			children = (
 				A03410D324442C140051DAF1 /* taskQuest */,
 				A03410D224442C140051DAF1 /* Products */,
+				0B886F1ADD39791A0A2EC41E /* Pods */,
+				5A06F05C3D4F9013DC9F77D3 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -74,9 +98,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = A03410E524442C160051DAF1 /* Build configuration list for PBXNativeTarget "taskQuest" */;
 			buildPhases = (
+				5E559EC03CBCAAE8BB9A8581 /* [CP] Check Pods Manifest.lock */,
 				A03410CD24442C140051DAF1 /* Sources */,
 				A03410CE24442C140051DAF1 /* Frameworks */,
 				A03410CF24442C140051DAF1 /* Resources */,
+				C52B1143CF3CAEDD44B6BF85 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -132,6 +158,48 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		5E559EC03CBCAAE8BB9A8581 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-taskQuest-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C52B1143CF3CAEDD44B6BF85 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-taskQuest/Pods-taskQuest-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-taskQuest/Pods-taskQuest-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-taskQuest/Pods-taskQuest-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		A03410CD24442C140051DAF1 /* Sources */ = {
@@ -282,11 +350,13 @@
 		};
 		A03410E624442C160051DAF1 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3F300E4E93DE14F2CD115CD8 /* Pods-taskQuest.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = J473J5NEMU;
 				INFOPLIST_FILE = taskQuest/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -300,11 +370,13 @@
 		};
 		A03410E724442C160051DAF1 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 23142341D111A647C9E4B5CC /* Pods-taskQuest.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = J473J5NEMU;
 				INFOPLIST_FILE = taskQuest/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
