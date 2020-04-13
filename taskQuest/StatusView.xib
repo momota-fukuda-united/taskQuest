@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16086"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="StatusView" customModule="taskQuest" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="895"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="U5T-T6-wbM">
+                    <rect key="frame" x="0.0" y="44" width="100" height="100"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="100" id="HnL-Le-HU5"/>
+                        <constraint firstAttribute="height" constant="100" id="SVh-8f-27Y"/>
+                    </constraints>
+                </imageView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="名前" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="y3f-Ts-ai9">
+                    <rect key="frame" x="110" y="54" width="304" height="21"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="HP" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="m4P-vv-IKT">
+                    <rect key="frame" x="110" y="85" width="304" height="21"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ステータス類" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5ME-vF-wGS">
+                    <rect key="frame" x="110" y="116" width="304" height="21"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+            <constraints>
+                <constraint firstItem="y3f-Ts-ai9" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" constant="10" id="3Rs-a9-VpO"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="y3f-Ts-ai9" secondAttribute="trailing" id="FsB-xS-brF"/>
+                <constraint firstItem="m4P-vv-IKT" firstAttribute="leading" secondItem="U5T-T6-wbM" secondAttribute="trailing" constant="10" id="Jnf-7O-ST0"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="m4P-vv-IKT" secondAttribute="trailing" id="aJ8-pY-n8W"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="5ME-vF-wGS" secondAttribute="trailing" id="d3g-xv-Fzk"/>
+                <constraint firstItem="5ME-vF-wGS" firstAttribute="top" secondItem="m4P-vv-IKT" secondAttribute="bottom" constant="10" id="dE1-Nk-MVs"/>
+                <constraint firstItem="U5T-T6-wbM" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="eiz-CD-leb"/>
+                <constraint firstItem="U5T-T6-wbM" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" id="fMV-gf-fnZ"/>
+                <constraint firstItem="5ME-vF-wGS" firstAttribute="leading" secondItem="U5T-T6-wbM" secondAttribute="trailing" constant="10" id="g5q-6m-Oi7"/>
+                <constraint firstItem="y3f-Ts-ai9" firstAttribute="leading" secondItem="U5T-T6-wbM" secondAttribute="trailing" constant="10" id="lsU-L1-JJn"/>
+                <constraint firstItem="m4P-vv-IKT" firstAttribute="top" secondItem="y3f-Ts-ai9" secondAttribute="bottom" constant="10" id="xGM-iB-dcH"/>
+            </constraints>
+            <nil key="simulatedTopBarMetrics"/>
+            <nil key="simulatedBottomBarMetrics"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <point key="canvasLocation" x="141" y="154"/>
+        </view>
+    </objects>
+</document>
