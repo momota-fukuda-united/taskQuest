@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Fki-bc-dh3">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16086"/>
@@ -62,7 +62,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1047.8260869565217" y="138.61607142857142"/>
+            <point key="canvasLocation" x="1957.9710144927537" y="138.61607142857142"/>
         </scene>
         <!--やること-->
         <scene sceneID="3Cp-rC-KTu">
@@ -150,7 +150,7 @@
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
-                            <constraint firstItem="tgU-YP-2aE" firstAttribute="top" secondItem="VJw-TP-t03" secondAttribute="top" constant="10" id="2m7-is-8uN"/>
+                            <constraint firstItem="tgU-YP-2aE" firstAttribute="top" secondItem="VJw-TP-t03" secondAttribute="top" constant="10" id="49J-VT-p1r"/>
                             <constraint firstItem="sT1-ui-Wyh" firstAttribute="leading" secondItem="VJw-TP-t03" secondAttribute="leading" constant="10" id="8SI-Ox-KJ3"/>
                             <constraint firstItem="VJw-TP-t03" firstAttribute="trailing" secondItem="tgU-YP-2aE" secondAttribute="trailing" constant="10" id="CBw-cC-eKc"/>
                             <constraint firstItem="sYa-qa-foa" firstAttribute="leading" secondItem="VJw-TP-t03" secondAttribute="leading" constant="10" id="Eqv-FU-aWY"/>
@@ -181,11 +181,11 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="VJw-TP-t03"/>
                     </view>
-                    <navigationItem key="navigationItem" title="やること" id="fHw-yD-p5R"/>
+                    <navigationItem key="navigationItem" title="やること" id="mkf-nD-6nD"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xC1-4H-OqS" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1876.8115942028987" y="138.61607142857142"/>
+            <point key="canvasLocation" x="2786.9565217391305" y="138.61607142857142"/>
         </scene>
         <!--開始時刻の予約-->
         <scene sceneID="RnF-Fh-DSQ">
@@ -231,7 +231,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dPE-zv-BPu" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2715.9420289855075" y="137.94642857142856"/>
+            <point key="canvasLocation" x="3626.0869565217395" y="137.94642857142856"/>
         </scene>
         <!--○○中-->
         <scene sceneID="tpa-t7-wYz">
@@ -305,9 +305,9 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="e5e-Fp-KGI" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2716" y="863"/>
+            <point key="canvasLocation" x="2787" y="871"/>
         </scene>
-        <!--View Controller-->
+        <!--終了！-->
         <scene sceneID="uf8-wx-bru">
             <objects>
                 <viewController id="ymQ-l9-E6s" sceneMemberID="viewController">
@@ -377,13 +377,13 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="wVF-oJ-uzq"/>
                     </view>
-                    <navigationItem key="navigationItem" id="xa6-rQ-cPI"/>
+                    <navigationItem key="navigationItem" title="終了！" id="xa6-rQ-cPI"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZVQ-0m-wwq" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3551" y="863"/>
         </scene>
-        <!--View Controller-->
+        <!--あなたの頑張りで冒険中-->
         <scene sceneID="6K1-yU-nHa">
             <objects>
                 <viewController id="XZu-N5-Kn8" sceneMemberID="viewController">
@@ -444,34 +444,34 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="o6h-bT-DZe"/>
                     </view>
-                    <navigationItem key="navigationItem" id="mnE-qh-xq1"/>
+                    <navigationItem key="navigationItem" title="あなたの頑張りで冒険中" id="mnE-qh-xq1"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ktp-OA-ucb" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="4398.5507246376819" y="862.5"/>
         </scene>
         <!--Navigation Controller-->
-        <scene sceneID="s8y-8N-izv">
+        <scene sceneID="bSw-Ju-tT4">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Fki-bc-dh3" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="L1G-fT-vro" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="xHV-HO-2VE">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="UcI-H0-879">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="ERt-gz-stT"/>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="xRV-g0-7mA"/>
                     </connections>
                 </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="uVk-vc-PBo" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="o8S-fc-25o" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="137.68115942028987" y="138.61607142857142"/>
+            <point key="canvasLocation" x="1047.8260869565217" y="138.61607142857142"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
         <segue reference="wpf-lZ-gXm"/>
         <segue reference="K8M-4l-uEn"/>
-        <segue reference="7XU-Qj-CPZ"/>
+        <segue reference="oXh-kz-ysj"/>
     </inferredMetricsTieBreakers>
 </document>
