@@ -57,6 +57,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="statusView" destination="Qqt-ky-dSj" id="fdb-0z-ABH"/>
                         <segue destination="TLb-vA-bcD" kind="show" identifier="selectCell" id="7XU-Qj-CPZ"/>
                     </connections>
                 </viewController>
