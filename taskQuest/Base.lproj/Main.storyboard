@@ -119,7 +119,7 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="uLJ-Xr-GF2">
+                            <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="countDownTimer" minuteInterval="5" useCurrentDate="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uLJ-Xr-GF2">
                                 <rect key="frame" x="10" y="465" width="394" height="216"/>
                             </datePicker>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="Mz1-7S-cAF">
@@ -471,7 +471,7 @@
     </scenes>
     <inferredMetricsTieBreakers>
         <segue reference="wpf-lZ-gXm"/>
-        <segue reference="K8M-4l-uEn"/>
+        <segue reference="Qhj-3e-dNI"/>
         <segue reference="oXh-kz-ysj"/>
     </inferredMetricsTieBreakers>
 </document>
