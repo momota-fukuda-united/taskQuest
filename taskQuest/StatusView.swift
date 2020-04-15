@@ -10,6 +10,14 @@ import Foundation
 import UIKit
 
 class StatusView: UIView {
+    static let firstStatusLabelFormat = "HP %@/%@"
+    static let secondStatusLabelFormat = "ATK %@ DEF %@ INT %@ LUK %@"
+    static let thirdStatusLabelFormat = "%@ Gold"
+    
+    @IBOutlet private var firstStatusLabel: UILabel!
+    @IBOutlet private var secondStatusLabel: UILabel!
+    @IBOutlet private var thirdStatusLabel: UILabel!
+    
     var className: String {
         return String(describing: type(of: self))
     }
@@ -34,7 +42,13 @@ class StatusView: UIView {
      }
      */
     
-    func loadNib() {        
+    func set(status: Status) {
+        self.firstStatusLabel.text = String(format: StatusView.firstStatusLabelFormat, status.hp, status.maxHp)
+        self.secondStatusLabel.text = String(format: StatusView.secondStatusLabelFormat, status.atk, status.def, status.int, status.luk)
+        self.thirdStatusLabel.text = String(format: StatusView.thirdStatusLabelFormat, status.gold)
+    }
+    
+    private func loadNib() {
         let nib = UINib(nibName: self.className, bundle: Bundle.main)
         let statusView = nib.instantiate(withOwner: self, options: nil).first! as! UIView
         statusView.frame = self.bounds

@@ -20,7 +20,7 @@ class Task: Object {
     
     @objc dynamic var timer = Date()
     
-    @objc dynamic var startingTIme: Date?
+    @objc dynamic var startingTime: Date?
     
     override class func primaryKey() -> String? {
         return "id"

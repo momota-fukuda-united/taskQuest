@@ -58,6 +58,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="statusView" destination="Qqt-ky-dSj" id="fdb-0z-ABH"/>
+                        <outlet property="taskTable" destination="wi4-G3-gXl" id="h7B-Ko-IWB"/>
                         <segue destination="TLb-vA-bcD" kind="show" identifier="selectCell" id="7XU-Qj-CPZ"/>
                     </connections>
                 </viewController>
