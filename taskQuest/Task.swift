@@ -34,4 +34,14 @@ class Task: Object {
             self.typeRow = newValue.rawValue
         }
     }
+    
+    static func Create(realm: Realm) -> Task{
+        let task = Task()
+        let allTasks = realm.objects(Task.self)
+        if allTasks.count > 0 {
+            task.id = allTasks.max(ofProperty: "id")! + 1
+        }
+        
+        return task
+    }
 }

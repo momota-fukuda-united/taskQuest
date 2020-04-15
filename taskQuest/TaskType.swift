@@ -6,7 +6,8 @@
 //  Copyright © 2020 momota-fukuda. All rights reserved.
 //
 
-enum TaskType: Int {
+// 必ず新しい項目はother前に追加
+enum TaskType: Int, CaseIterable {
     case study
     case exercise
     case work
@@ -16,18 +17,20 @@ enum TaskType: Int {
 }
 
 extension TaskType {
-    static private let textDic: [TaskType: String] = [
+    private static let textDic: [TaskType: String] = [
         .study: "勉強",
         .exercise: "運動",
         .work: "仕事",
         .housework: "家事",
-        
+
         .other: "その他",
     ]
-    
-    var text: String{
-        get {
-            return TaskType.textDic[self]!
-        }
+
+    var text: String {
+        return TaskType.textDic[self]!
+    }
+
+    var index: Int {
+        return TaskType.allCases.firstIndex(of: self)!
     }
 }
