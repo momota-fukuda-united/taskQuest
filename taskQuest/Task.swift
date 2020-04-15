@@ -18,7 +18,7 @@ class Task: Object {
     
     @objc dynamic var memo = ""
     
-    @objc dynamic var timer = Date()
+    @objc dynamic var timer = TimeInterval()
     
     @objc dynamic var startingTime: Date?
     

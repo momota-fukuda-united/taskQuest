@@ -134,7 +134,7 @@
                                         <rect key="frame" x="0.0" y="0.0" width="124.5" height="30"/>
                                         <state key="normal" title="即開始"/>
                                         <connections>
-                                            <segue destination="c77-fN-dhu" kind="show" id="Zfn-qu-VDu"/>
+                                            <action selector="onTapDoNowButton:" destination="TLb-vA-bcD" eventType="touchUpInside" id="eHq-aH-Qwy"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zB0-LH-5KG">
@@ -191,11 +191,13 @@
                     </view>
                     <navigationItem key="navigationItem" title="やること" id="mkf-nD-6nD"/>
                     <connections>
+                        <outlet property="deleteButton" destination="f44-uv-BXn" id="35Q-sl-qAO"/>
                         <outlet property="memoTextView" destination="SJP-EN-bkJ" id="9UW-dh-bWc"/>
                         <outlet property="timerPicker" destination="uLJ-Xr-GF2" id="AFk-eY-hGU"/>
                         <outlet property="titleTextField" destination="sHs-8a-Z4q" id="o3o-y6-J6K"/>
                         <outlet property="typeSegmentedControl" destination="sT1-ui-Wyh" id="7N1-3M-gi2"/>
                         <segue destination="HQX-RE-tnB" kind="unwind" identifier="unwindTop" unwindAction="unwindToTaskDetail:" id="pSD-Mk-gyJ"/>
+                        <segue destination="c77-fN-dhu" kind="show" identifier="shiwDoing" id="Akh-ZM-Okr"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xC1-4H-OqS" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
