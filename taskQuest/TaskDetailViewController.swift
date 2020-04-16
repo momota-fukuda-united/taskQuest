@@ -9,7 +9,9 @@
 import RealmSwift
 import UIKit
 
-class TaskDetailViewController: UIViewController {
+class TaskDetailViewController: UIViewController, ReserveDelegate {
+
+    
     @IBOutlet private var titleTextField: UITextField!
     @IBOutlet private var typeSegmentedControl: UISegmentedControl!
     @IBOutlet private var memoTextView: UITextView!
@@ -42,21 +44,37 @@ class TaskDetailViewController: UIViewController {
         self.timerPicker.countDownDuration = task.timer
     }
     
-    @objc func dismissKeyboard() {
-        // キーボードを閉じる
-        view.endEditing(true)
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let toViewController = segue.destination
+        if let reserveView = toViewController as? ReserveViewController {
+            reserveView.set(task: self.task!, reserveDelegate: self)
+        }
     }
     
-    @IBAction func onTapDoNowButton(_ sender: UIButton) {
+    func reserve(date: Date) {
+        self.apply(date: date)
+    }
+    
+    private func apply(date: Date?){
         let task = self.task!
         try! self.realm.write {
             task.title = self.titleTextField.text!
             task.type = TaskType.allCases[self.typeSegmentedControl.selectedSegmentIndex]
             task.memo = self.memoTextView.text
             task.timer = self.timerPicker.countDownDuration
+            task.startingTime = date
             
             self.realm.add(task, update: .modified)
         }
+    }
+    
+    @objc func dismissKeyboard() {
+        // キーボードを閉じる
+        view.endEditing(true)
+    }
+    
+    @IBAction func onTapDoNowButton(_ sender: UIButton) {
+        self.apply(date: nil)
     }
     
     @IBAction func onTapDeleteButton(_ sender: UIButton) {

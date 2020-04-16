@@ -20,9 +20,12 @@
 		A03411122445B1F10051DAF1 /* TaskType.swift in Sources */ = {isa = PBXBuildFile; fileRef = A03411112445B1F10051DAF1 /* TaskType.swift */; };
 		A03411162445C0990051DAF1 /* Definition.swift in Sources */ = {isa = PBXBuildFile; fileRef = A03411152445C0990051DAF1 /* Definition.swift */; };
 		A03411182446A0390051DAF1 /* Copyright.txt in Resources */ = {isa = PBXBuildFile; fileRef = A03411172446A0390051DAF1 /* Copyright.txt */; };
+		A0628DC42447FEF6002B9914 /* ReserveDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0628DC32447FEF6002B9914 /* ReserveDelegate.swift */; };
 		A0A2FAB52446B734002F3C62 /* Status.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0A2FAB42446B734002F3C62 /* Status.swift */; };
 		A0A2FAB62446E38F002F3C62 /* TaskCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A03411132445BC7D0051DAF1 /* TaskCell.swift */; };
 		A0A2FABB2446EB2E002F3C62 /* UISegmentedControl.Extention.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0A2FABA2446EB2E002F3C62 /* UISegmentedControl.Extention.swift */; };
+		A0A2FABD24470F51002F3C62 /* ReserveViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0A2FABC24470F51002F3C62 /* ReserveViewController.swift */; };
+		A0A2FABF2447F05D002F3C62 /* UINavigationController.Extention.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0A2FABE2447F05D002F3C62 /* UINavigationController.Extention.swift */; };
 		E23FC521FD7D33A376BA1AEC /* Pods_taskQuest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4F373A54D0A3C4A324828662 /* Pods_taskQuest.framework */; };
 /* End PBXBuildFile section */
 
@@ -46,8 +49,11 @@
 		A03411132445BC7D0051DAF1 /* TaskCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskCell.swift; sourceTree = "<group>"; };
 		A03411152445C0990051DAF1 /* Definition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Definition.swift; sourceTree = "<group>"; };
 		A03411172446A0390051DAF1 /* Copyright.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = Copyright.txt; sourceTree = "<group>"; };
+		A0628DC32447FEF6002B9914 /* ReserveDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReserveDelegate.swift; sourceTree = "<group>"; };
 		A0A2FAB42446B734002F3C62 /* Status.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Status.swift; sourceTree = "<group>"; };
 		A0A2FABA2446EB2E002F3C62 /* UISegmentedControl.Extention.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UISegmentedControl.Extention.swift; sourceTree = "<group>"; };
+		A0A2FABC24470F51002F3C62 /* ReserveViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReserveViewController.swift; sourceTree = "<group>"; };
+		A0A2FABE2447F05D002F3C62 /* UINavigationController.Extention.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UINavigationController.Extention.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -117,6 +123,9 @@
 				A03411172446A0390051DAF1 /* Copyright.txt */,
 				A0A2FAB42446B734002F3C62 /* Status.swift */,
 				A0A2FABA2446EB2E002F3C62 /* UISegmentedControl.Extention.swift */,
+				A0A2FABC24470F51002F3C62 /* ReserveViewController.swift */,
+				A0A2FABE2447F05D002F3C62 /* UINavigationController.Extention.swift */,
+				A0628DC32447FEF6002B9914 /* ReserveDelegate.swift */,
 			);
 			path = taskQuest;
 			sourceTree = "<group>";
@@ -242,11 +251,14 @@
 				A03410D924442C140051DAF1 /* TopViewController.swift in Sources */,
 				A0A2FAB52446B734002F3C62 /* Status.swift in Sources */,
 				A03411162445C0990051DAF1 /* Definition.swift in Sources */,
+				A0A2FABF2447F05D002F3C62 /* UINavigationController.Extention.swift in Sources */,
 				A03410D524442C140051DAF1 /* AppDelegate.swift in Sources */,
+				A0A2FABD24470F51002F3C62 /* ReserveViewController.swift in Sources */,
 				A0A2FABB2446EB2E002F3C62 /* UISegmentedControl.Extention.swift in Sources */,
 				A03410EB244435BF0051DAF1 /* StatusView.swift in Sources */,
 				A03410D724442C140051DAF1 /* SceneDelegate.swift in Sources */,
 				A03411122445B1F10051DAF1 /* TaskType.swift in Sources */,
+				A0628DC42447FEF6002B9914 /* ReserveDelegate.swift in Sources */,
 				A03411102445B1150051DAF1 /* Task.swift in Sources */,
 				A034110E2445B06D0051DAF1 /* TaskDetailViewController.swift in Sources */,
 			);
