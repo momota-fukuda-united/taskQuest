@@ -33,11 +33,6 @@ class TopViewController: UIViewController, UITableViewDelegate, UITableViewDataS
         self.taskTable.dataSource = self
     }
     
-    @IBAction func unwindToTaskDetail(_ unwindSegue: UIStoryboardSegue) {
-        let sourceViewController = unwindSegue.source as! TaskDetailViewController
-        // Use data from the view controller which initiated the unwind segue
-    }
-    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return self.tasks.count
     }
