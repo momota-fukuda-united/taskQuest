@@ -23,10 +23,10 @@ class TaskCell: UITableViewCell {
     func set(title: String, type: TaskType, startingTime: Date?) {
         self.textLabel?.text = title
 
-        let detailText = startingTime != nil ?
+        let dateText = startingTime != nil ?
             Definition.dateFormatter.string(from: startingTime!) :
             Definition.emptyStartingTimeText
 
-        self.detailTextLabel?.text = detailText
+        self.detailTextLabel?.text = String(format: "%@ %@", type.text, dateText)
     }
 }
