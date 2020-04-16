@@ -15,15 +15,8 @@ class TopViewController: UIViewController, UITableViewDelegate, UITableViewDataS
     
     private let realm = try! Realm()
     var tasks = try! Realm().objects(Task.self)
-        .sorted(by: { (arg1: Task, arg2: Task) -> Bool in
-            if arg2.startingTime == nil {
-                return true
-            } else if arg1.startingTime == nil {
-                return false
-            }
-            
-            return arg1.startingTime! < arg2.startingTime!
-    })
+        .sorted(byKeyPath: "startingTime", ascending: true)
+        .sorted(byKeyPath: "isEnd", ascending: true)
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -31,6 +24,12 @@ class TopViewController: UIViewController, UITableViewDelegate, UITableViewDataS
         
         self.taskTable.delegate = self
         self.taskTable.dataSource = self
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        self.taskTable.reloadData()
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -47,5 +46,22 @@ class TopViewController: UIViewController, UITableViewDelegate, UITableViewDataS
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         self.performSegue(withIdentifier: "selectCell", sender: nil)
+    }
+    
+    func tableView(_ tableView: UITableView, editingStyleForRowAt indexPath: IndexPath) -> UITableViewCell.EditingStyle {
+        return .delete
+    }
+    
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        switch editingStyle {
+        case .delete:
+            try! self.realm.write {
+                self.realm.delete(self.tasks[indexPath.row])
+                tableView.deleteRows(at: [indexPath], with: .fade)
+            }
+            break
+        default:
+            break
+        }
     }
 }
