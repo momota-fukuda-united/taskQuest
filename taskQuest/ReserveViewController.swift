@@ -23,6 +23,9 @@ class ReserveViewController: UIViewController {
         if self.task.startingTime != nil {
             self.startingTimePicker.date = self.task.startingTime!
         }
+        
+        // 過去の時間を予約できないように
+        self.startingTimePicker.minimumDate = Date()
     }
     
     func set(task: Task, reserveDelegate: ReserveDelegate) {
@@ -31,6 +34,14 @@ class ReserveViewController: UIViewController {
     }
     
     @IBAction private func onTapReserveButton(_ sender: UIButton) {
+        if self.startingTimePicker.date < Date(){
+            let dialog = UIAlertController(title: "エラー", message: "未来の日時を指定してください", preferredStyle: .alert)
+            dialog.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+            
+            self.present(dialog, animated: true, completion: nil)
+            return
+        }
+        
         self.reserveDelegate.reserve(date: self.startingTimePicker.date)
         
         self.navigationController?.popToViewController(ofClass: TopViewController.self)

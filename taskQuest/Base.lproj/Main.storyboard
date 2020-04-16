@@ -154,7 +154,7 @@
                                         <rect key="frame" x="134.5" y="0.0" width="125" height="30"/>
                                         <state key="normal" title="予約"/>
                                         <connections>
-                                            <segue destination="suv-ex-edv" kind="show" id="Qhj-3e-dNI"/>
+                                            <action selector="onTapReserveButton:" destination="TLb-vA-bcD" eventType="touchUpInside" id="PDT-f8-Coc"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="f44-uv-BXn">
@@ -210,7 +210,8 @@
                         <outlet property="titleTextField" destination="sHs-8a-Z4q" id="o3o-y6-J6K"/>
                         <outlet property="typeSegmentedControl" destination="sT1-ui-Wyh" id="7N1-3M-gi2"/>
                         <segue destination="HQX-RE-tnB" kind="unwind" identifier="unwindTop" unwindAction="unwindToTaskDetail:" id="pSD-Mk-gyJ"/>
-                        <segue destination="c77-fN-dhu" kind="show" identifier="shiwDoing" id="Akh-ZM-Okr"/>
+                        <segue destination="c77-fN-dhu" kind="show" identifier="showDoing" id="Akh-ZM-Okr"/>
+                        <segue destination="suv-ex-edv" kind="show" identifier="showReserve" id="Ecc-g5-xe7"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xC1-4H-OqS" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -508,7 +509,7 @@
     </scenes>
     <inferredMetricsTieBreakers>
         <segue reference="wpf-lZ-gXm"/>
-        <segue reference="Qhj-3e-dNI"/>
+        <segue reference="Ecc-g5-xe7"/>
         <segue reference="oXh-kz-ysj"/>
     </inferredMetricsTieBreakers>
 </document>

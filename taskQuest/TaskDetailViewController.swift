@@ -56,6 +56,7 @@ class TaskDetailViewController: UIViewController, ReserveDelegate {
     }
     
     private func apply(date: Date?){
+        
         let task = self.task!
         try! self.realm.write {
             task.title = self.titleTextField.text!
@@ -68,13 +69,35 @@ class TaskDetailViewController: UIViewController, ReserveDelegate {
         }
     }
     
+    func showNeedsTitleDialog(){
+        let dialog = UIAlertController(title: "エラー", message: "タイトルは必須です", preferredStyle: .alert)
+        dialog.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+        
+        self.present(dialog, animated: true, completion: nil)
+    }
+    
     @objc func dismissKeyboard() {
         // キーボードを閉じる
         view.endEditing(true)
     }
     
     @IBAction func onTapDoNowButton(_ sender: UIButton) {
+        if self.titleTextField.text == "" {
+            self.showNeedsTitleDialog()
+            return
+        }
+        
         self.apply(date: nil)
+        self.performSegue(withIdentifier: "showDoing", sender: sender)
+    }
+    
+    @IBAction func onTapReserveButton(_ sender: UIButton) {
+        if self.titleTextField.text == "" {
+            self.showNeedsTitleDialog()
+            return
+        }
+        
+        self.performSegue(withIdentifier: "showReserve", sender: sender)
     }
     
     @IBAction func onTapDeleteButton(_ sender: UIButton) {
@@ -87,6 +110,6 @@ class TaskDetailViewController: UIViewController, ReserveDelegate {
         }
         
         self.task = nil
-        self.performSegue(withIdentifier: "unwindTop", sender: nil)
+        self.performSegue(withIdentifier: "unwindTop", sender: sender)
     }
 }
