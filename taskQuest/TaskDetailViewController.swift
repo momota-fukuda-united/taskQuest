@@ -48,6 +48,11 @@ class TaskDetailViewController: UIViewController, ReserveDelegate {
         let toViewController = segue.destination
         if let reserveView = toViewController as? ReserveViewController {
             reserveView.set(task: self.task!, reserveDelegate: self)
+            return
+        }
+        if let doingView = toViewController as? DoingViewController {
+            doingView.set(task: self.task!)
+            return
         }
     }
     

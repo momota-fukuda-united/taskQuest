@@ -274,7 +274,7 @@
         <!--○○中-->
         <scene sceneID="tpa-t7-wYz">
             <objects>
-                <viewController id="c77-fN-dhu" sceneMemberID="viewController">
+                <viewController id="c77-fN-dhu" customClass="DoingViewController" customModule="taskQuest" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="pvE-hO-eQm">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -340,6 +340,11 @@
                         <viewLayoutGuide key="safeArea" id="rz3-4L-r2s"/>
                     </view>
                     <navigationItem key="navigationItem" title="○○中" id="fmZ-HF-K9H"/>
+                    <connections>
+                        <outlet property="memoTextView" destination="YAo-d1-n2p" id="PXi-k8-7sx"/>
+                        <outlet property="timerLabel" destination="p1L-j0-M9O" id="gOQ-kc-aaa"/>
+                        <outlet property="titleLabel" destination="HXl-cd-iYE" id="RXh-6Q-B0U"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="e5e-Fp-KGI" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

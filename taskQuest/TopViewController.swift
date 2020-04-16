@@ -32,6 +32,18 @@ class TopViewController: UIViewController, UITableViewDelegate, UITableViewDataS
         self.taskTable.reloadData()
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let toViewController = segue.destination
+        
+        if let taskDetailView = toViewController as? TaskDetailViewController {
+            if segue.identifier == "selectCell" {
+                let selected = self.taskTable.indexPathForSelectedRow!
+                taskDetailView.task = self.tasks[selected.row]
+                return
+            }
+        }
+    }
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return self.tasks.count
     }
