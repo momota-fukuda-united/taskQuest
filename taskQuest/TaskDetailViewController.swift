@@ -74,7 +74,7 @@ class TaskDetailViewController: UIViewController, ReserveDelegate {
         }
     }
     
-    func showNeedsTitleDialog(){
+    private func showNeedsTitleDialog(){
         let dialog = UIAlertController(title: "エラー", message: "タイトルは必須です", preferredStyle: .alert)
         dialog.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
         
@@ -86,7 +86,7 @@ class TaskDetailViewController: UIViewController, ReserveDelegate {
         view.endEditing(true)
     }
     
-    @IBAction func onTapDoNowButton(_ sender: UIButton) {
+    @IBAction private func onTapDoNowButton(_ sender: UIButton) {
         if self.titleTextField.text == "" {
             self.showNeedsTitleDialog()
             return
@@ -96,7 +96,7 @@ class TaskDetailViewController: UIViewController, ReserveDelegate {
         self.performSegue(withIdentifier: "showDoing", sender: sender)
     }
     
-    @IBAction func onTapReserveButton(_ sender: UIButton) {
+    @IBAction private func onTapReserveButton(_ sender: UIButton) {
         if self.titleTextField.text == "" {
             self.showNeedsTitleDialog()
             return
@@ -105,7 +105,17 @@ class TaskDetailViewController: UIViewController, ReserveDelegate {
         self.performSegue(withIdentifier: "showReserve", sender: sender)
     }
     
-    @IBAction func onTapDeleteButton(_ sender: UIButton) {
+    @IBAction private func onTapCreateButton(_ sender: UIButton) {
+        if self.titleTextField.text == "" {
+            self.showNeedsTitleDialog()
+            return
+        }
+        
+        self.apply(date: nil)
+        self.navigationController?.popViewController(animated: true)
+    }
+    
+    @IBAction private func onTapDeleteButton(_ sender: UIButton) {
         if self.task == nil {
             return
         }

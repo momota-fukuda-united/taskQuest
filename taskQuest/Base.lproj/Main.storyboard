@@ -141,20 +141,20 @@
                                 <rect key="frame" x="10" y="465" width="394" height="216"/>
                             </datePicker>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="Mz1-7S-cAF">
-                                <rect key="frame" x="10" y="822" width="394" height="30"/>
+                                <rect key="frame" x="10" y="782" width="394" height="30"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Hso-0I-pdm">
-                                        <rect key="frame" x="0.0" y="0.0" width="124.5" height="30"/>
-                                        <state key="normal" title="即開始"/>
-                                        <connections>
-                                            <action selector="onTapDoNowButton:" destination="TLb-vA-bcD" eventType="touchUpInside" id="eHq-aH-Qwy"/>
-                                        </connections>
-                                    </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zB0-LH-5KG">
-                                        <rect key="frame" x="134.5" y="0.0" width="125" height="30"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="124.5" height="30"/>
                                         <state key="normal" title="予約"/>
                                         <connections>
                                             <action selector="onTapReserveButton:" destination="TLb-vA-bcD" eventType="touchUpInside" id="PDT-f8-Coc"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yEd-Ns-mTK">
+                                        <rect key="frame" x="134.5" y="0.0" width="125" height="30"/>
+                                        <state key="normal" title="作成"/>
+                                        <connections>
+                                            <action selector="onTapCreateButton:" destination="TLb-vA-bcD" eventType="touchUpInside" id="vog-6g-oY7"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="f44-uv-BXn">
@@ -168,23 +168,33 @@
                                     </button>
                                 </subviews>
                             </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Hso-0I-pdm">
+                                <rect key="frame" x="10" y="822" width="394" height="30"/>
+                                <state key="normal" title="即開始"/>
+                                <connections>
+                                    <action selector="onTapDoNowButton:" destination="TLb-vA-bcD" eventType="touchUpInside" id="eHq-aH-Qwy"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="tgU-YP-2aE" firstAttribute="top" secondItem="VJw-TP-t03" secondAttribute="top" constant="10" id="49J-VT-p1r"/>
                             <constraint firstItem="sT1-ui-Wyh" firstAttribute="leading" secondItem="VJw-TP-t03" secondAttribute="leading" constant="10" id="8SI-Ox-KJ3"/>
+                            <constraint firstItem="VJw-TP-t03" firstAttribute="bottom" secondItem="Hso-0I-pdm" secondAttribute="bottom" constant="10" id="ATv-1c-7wa"/>
                             <constraint firstItem="VJw-TP-t03" firstAttribute="trailing" secondItem="tgU-YP-2aE" secondAttribute="trailing" constant="10" id="CBw-cC-eKc"/>
                             <constraint firstItem="sYa-qa-foa" firstAttribute="leading" secondItem="VJw-TP-t03" secondAttribute="leading" constant="10" id="Eqv-FU-aWY"/>
+                            <constraint firstItem="VJw-TP-t03" firstAttribute="trailing" secondItem="Hso-0I-pdm" secondAttribute="trailing" constant="10" id="L0O-ge-0av"/>
                             <constraint firstItem="VJw-TP-t03" firstAttribute="trailing" secondItem="frj-mK-yFE" secondAttribute="trailing" constant="10" id="MBs-OI-FDE"/>
                             <constraint firstItem="Mz1-7S-cAF" firstAttribute="leading" secondItem="VJw-TP-t03" secondAttribute="leading" constant="10" id="O5F-nE-wHo"/>
                             <constraint firstItem="VJw-TP-t03" firstAttribute="trailing" secondItem="Mz1-7S-cAF" secondAttribute="trailing" constant="10" id="Phc-0j-nsd"/>
                             <constraint firstItem="SJP-EN-bkJ" firstAttribute="leading" secondItem="VJw-TP-t03" secondAttribute="leading" constant="10" id="QgN-mR-iOk"/>
                             <constraint firstItem="SJP-EN-bkJ" firstAttribute="top" secondItem="frj-mK-yFE" secondAttribute="bottom" constant="10" id="QkR-QI-fuZ"/>
                             <constraint firstItem="sT1-ui-Wyh" firstAttribute="top" secondItem="pBm-L8-dYS" secondAttribute="bottom" constant="10" id="RJl-Z4-VAo"/>
-                            <constraint firstItem="VJw-TP-t03" firstAttribute="bottom" secondItem="Mz1-7S-cAF" secondAttribute="bottom" constant="10" id="Xea-px-sEM"/>
+                            <constraint firstItem="Hso-0I-pdm" firstAttribute="top" secondItem="Mz1-7S-cAF" secondAttribute="bottom" constant="10" id="Xea-px-sEM"/>
                             <constraint firstItem="VJw-TP-t03" firstAttribute="trailing" secondItem="sHs-8a-Z4q" secondAttribute="trailing" constant="10" id="YIN-mL-MrF"/>
                             <constraint firstItem="VJw-TP-t03" firstAttribute="trailing" secondItem="SJP-EN-bkJ" secondAttribute="trailing" constant="10" id="Yza-mB-IUr"/>
                             <constraint firstItem="VJw-TP-t03" firstAttribute="trailing" secondItem="sYa-qa-foa" secondAttribute="trailing" constant="10" id="ZdA-b5-vzF"/>
+                            <constraint firstItem="Hso-0I-pdm" firstAttribute="leading" secondItem="VJw-TP-t03" secondAttribute="leading" constant="10" id="Zih-cI-NMQ"/>
                             <constraint firstItem="VJw-TP-t03" firstAttribute="trailing" secondItem="pBm-L8-dYS" secondAttribute="trailing" constant="10" id="aeA-Bn-YvY"/>
                             <constraint firstItem="VJw-TP-t03" firstAttribute="trailing" secondItem="Mz1-7S-cAF" secondAttribute="trailing" constant="10" id="bPV-VC-yPY"/>
                             <constraint firstItem="frj-mK-yFE" firstAttribute="top" secondItem="sT1-ui-Wyh" secondAttribute="bottom" constant="10" id="dwc-DW-q2Z"/>
@@ -515,6 +525,6 @@
     <inferredMetricsTieBreakers>
         <segue reference="wpf-lZ-gXm"/>
         <segue reference="Ecc-g5-xe7"/>
-        <segue reference="oXh-kz-ysj"/>
+        <segue reference="7XU-Qj-CPZ"/>
     </inferredMetricsTieBreakers>
 </document>
