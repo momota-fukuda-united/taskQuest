@@ -16,4 +16,6 @@ class Definition {
         return formatter
     }()
     static let emptyStartingTimeText = "開始日時なし"
+    
+    static let realmSchemaVersion: UInt64 = 1
 }

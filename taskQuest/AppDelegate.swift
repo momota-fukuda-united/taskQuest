@@ -33,12 +33,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let config = Realm.Configuration(
             // 新しいスキーマバージョンを設定します。以前のバージョンより大きくなければなりません。
             // （スキーマバージョンを設定したことがなければ、最初は0が設定されています）
-            schemaVersion: 1,
+            schemaVersion: Definition.realmSchemaVersion,
 
             // マイグレーション処理を記述します。古いスキーマバージョンのRealmを開こうとすると
             // 自動的にマイグレーションが実行されます。
             migrationBlock: { _, oldSchemaVersion in
-                if oldSchemaVersion < 1 {
+                if oldSchemaVersion < Definition.realmSchemaVersion {
                     // 何もする必要はありません！
                     // Realmは自動的に新しく追加されたプロパティと、削除されたプロパティを認識します。
                     // そしてディスク上のスキーマを自動的にアップデートします。
