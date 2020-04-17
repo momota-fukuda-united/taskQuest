@@ -14,7 +14,7 @@ class ReserveViewController: UIViewController {
     
     let realm = try! Realm()
     var task: Task!
-    var reserveDelegate: ReserveDelegate!
+    var reserveDelegate: ReserveDelegate?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,9 +28,16 @@ class ReserveViewController: UIViewController {
         self.startingTimePicker.minimumDate = Date()
     }
     
-    func set(task: Task, reserveDelegate: ReserveDelegate) {
+    func set(task: Task, reserveDelegate: ReserveDelegate?) {
         self.task = task
         self.reserveDelegate = reserveDelegate
+    }
+    
+    func reserve(){
+        try! self.realm.write {
+            self.task.startingTime = self.startingTimePicker.date
+            self.realm.add(self.task, update: .modified)
+        }
     }
     
     @IBAction private func onTapReserveButton(_ sender: UIButton) {
@@ -42,7 +49,7 @@ class ReserveViewController: UIViewController {
             return
         }
         
-        self.reserveDelegate.reserve(date: self.startingTimePicker.date)
+        self.reserveDelegate?.reserve(date: self.startingTimePicker.date) ?? self.reserve()
         
         self.navigationController?.popToViewController(ofClass: TopViewController.self)
     }

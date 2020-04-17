@@ -22,7 +22,7 @@ class Task: Object {
     
     @objc dynamic var startingTime: Date?
     
-    @objc dynamic var isComplete = false
+    @objc dynamic var isCompleted = false
     
     override class func primaryKey() -> String? {
         return "id"

@@ -22,6 +22,7 @@
 		A03411182446A0390051DAF1 /* Copyright.txt in Resources */ = {isa = PBXBuildFile; fileRef = A03411172446A0390051DAF1 /* Copyright.txt */; };
 		A0628DC42447FEF6002B9914 /* ReserveDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0628DC32447FEF6002B9914 /* ReserveDelegate.swift */; };
 		A0628DC6244838A5002B9914 /* DoingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0628DC5244838A5002B9914 /* DoingViewController.swift */; };
+		A0628DC824486167002B9914 /* OnEndTaskViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0628DC724486167002B9914 /* OnEndTaskViewController.swift */; };
 		A0A2FAB52446B734002F3C62 /* Status.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0A2FAB42446B734002F3C62 /* Status.swift */; };
 		A0A2FAB62446E38F002F3C62 /* TaskCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A03411132445BC7D0051DAF1 /* TaskCell.swift */; };
 		A0A2FABB2446EB2E002F3C62 /* UISegmentedControl.Extention.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0A2FABA2446EB2E002F3C62 /* UISegmentedControl.Extention.swift */; };
@@ -52,6 +53,7 @@
 		A03411172446A0390051DAF1 /* Copyright.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = Copyright.txt; sourceTree = "<group>"; };
 		A0628DC32447FEF6002B9914 /* ReserveDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReserveDelegate.swift; sourceTree = "<group>"; };
 		A0628DC5244838A5002B9914 /* DoingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoingViewController.swift; sourceTree = "<group>"; };
+		A0628DC724486167002B9914 /* OnEndTaskViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnEndTaskViewController.swift; sourceTree = "<group>"; };
 		A0A2FAB42446B734002F3C62 /* Status.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Status.swift; sourceTree = "<group>"; };
 		A0A2FABA2446EB2E002F3C62 /* UISegmentedControl.Extention.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UISegmentedControl.Extention.swift; sourceTree = "<group>"; };
 		A0A2FABC24470F51002F3C62 /* ReserveViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReserveViewController.swift; sourceTree = "<group>"; };
@@ -129,6 +131,7 @@
 				A0A2FABE2447F05D002F3C62 /* UINavigationController.Extention.swift */,
 				A0628DC32447FEF6002B9914 /* ReserveDelegate.swift */,
 				A0628DC5244838A5002B9914 /* DoingViewController.swift */,
+				A0628DC724486167002B9914 /* OnEndTaskViewController.swift */,
 			);
 			path = taskQuest;
 			sourceTree = "<group>";
@@ -264,6 +267,7 @@
 				A03411122445B1F10051DAF1 /* TaskType.swift in Sources */,
 				A0628DC42447FEF6002B9914 /* ReserveDelegate.swift in Sources */,
 				A03411102445B1150051DAF1 /* Task.swift in Sources */,
+				A0628DC824486167002B9914 /* OnEndTaskViewController.swift in Sources */,
 				A034110E2445B06D0051DAF1 /* TaskDetailViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

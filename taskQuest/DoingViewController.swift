@@ -34,6 +34,13 @@ class DoingViewController: UIViewController {
         self.navigationItem.hidesBackButton = true
     }
 
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let toView = segue.destination
+        if let onEndView = toView as? OnEndTaskViewController {
+            onEndView.set(task: self.task, time: self.task.timer - self.remainingSec)
+        }
+    }
+    
     func set(task: Task) {
         self.task = task
     }

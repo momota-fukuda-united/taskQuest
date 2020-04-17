@@ -363,7 +363,7 @@
         <!--終了！-->
         <scene sceneID="uf8-wx-bru">
             <objects>
-                <viewController id="ymQ-l9-E6s" sceneMemberID="viewController">
+                <viewController id="ymQ-l9-E6s" customClass="OnEndTaskViewController" customModule="taskQuest" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="vOg-1R-mb9">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -384,7 +384,7 @@
                                         </constraints>
                                         <state key="normal" title="終わった"/>
                                         <connections>
-                                            <segue destination="XZu-N5-Kn8" kind="show" id="wpf-lZ-gXm"/>
+                                            <action selector="onTapCompleteButton:" destination="ymQ-l9-E6s" eventType="touchUpInside" id="j3Q-Of-4x7"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mBO-kT-vEQ">
@@ -394,7 +394,7 @@
                                         </constraints>
                                         <state key="normal" title="終わらなかった"/>
                                         <connections>
-                                            <segue destination="XZu-N5-Kn8" kind="show" id="pBP-rY-CMM"/>
+                                            <action selector="onTapIncompleteButton:" destination="ymQ-l9-E6s" eventType="touchUpInside" id="Jso-8c-JDg"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ghx-pL-dt5">
@@ -415,6 +415,9 @@
                                         <state key="normal" title="中止">
                                             <color key="titleColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
+                                        <connections>
+                                            <action selector="onTapAbortButton:" destination="ymQ-l9-E6s" eventType="touchUpInside" id="po1-Mb-s3i"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                             </stackView>
@@ -431,6 +434,9 @@
                         <viewLayoutGuide key="safeArea" id="wVF-oJ-uzq"/>
                     </view>
                     <navigationItem key="navigationItem" title="終了！" id="xa6-rQ-cPI"/>
+                    <connections>
+                        <segue destination="XZu-N5-Kn8" kind="show" identifier="showResult" id="RbG-He-dEV"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZVQ-0m-wwq" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -523,8 +529,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="wpf-lZ-gXm"/>
-        <segue reference="Ecc-g5-xe7"/>
+        <segue reference="K8M-4l-uEn"/>
         <segue reference="7XU-Qj-CPZ"/>
     </inferredMetricsTieBreakers>
 </document>
