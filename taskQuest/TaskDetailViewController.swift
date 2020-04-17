@@ -68,7 +68,7 @@ class TaskDetailViewController: UIViewController, ReserveDelegate {
             task.type = TaskType.allCases[self.typeSegmentedControl.selectedSegmentIndex]
             task.memo = self.memoTextView.text
             task.timer = self.timerPicker.countDownDuration
-            task.startingTime = date
+            task.startingTime = date ?? task.startingTime
             
             self.realm.add(task, update: .modified)
         }
