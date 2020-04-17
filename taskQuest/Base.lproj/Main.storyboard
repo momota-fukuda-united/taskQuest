@@ -445,7 +445,7 @@
         <!--あなたの頑張りで冒険中-->
         <scene sceneID="6K1-yU-nHa">
             <objects>
-                <viewController id="XZu-N5-Kn8" sceneMemberID="viewController">
+                <viewController id="XZu-N5-Kn8" customClass="ResultViewController" customModule="taskQuest" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="EMN-iX-Sae">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -474,13 +474,13 @@
                             <stackView opaque="NO" contentMode="scaleAspectFit" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="Hmd-oi-hH9">
                                 <rect key="frame" x="0.0" y="822" width="414" height="40"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="92Y-7f-i86">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="92Y-7f-i86" customClass="ToggleButton" customModule="taskQuest" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="202" height="40"/>
-                                        <state key="normal" title="再生"/>
+                                        <state key="normal" title="再生/一時停止"/>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JDl-fG-Q1B">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JDl-fG-Q1B" customClass="ToggleButton" customModule="taskQuest" customModuleProvider="target">
                                         <rect key="frame" x="212" y="0.0" width="202" height="40"/>
-                                        <state key="normal" title="スキップ"/>
+                                        <state key="normal" title="スキップ/終了"/>
                                     </button>
                                 </subviews>
                                 <constraints>
@@ -504,6 +504,11 @@
                         <viewLayoutGuide key="safeArea" id="o6h-bT-DZe"/>
                     </view>
                     <navigationItem key="navigationItem" title="あなたの頑張りで冒険中" id="mnE-qh-xq1"/>
+                    <connections>
+                        <outlet property="pauseOrResumeButton" destination="92Y-7f-i86" id="a2e-5N-gfL"/>
+                        <outlet property="skipOrCompleteButton" destination="JDl-fG-Q1B" id="QWJ-0W-mhN"/>
+                        <outlet property="statusView" destination="m2Z-Nl-8Jo" id="sOW-D1-3EV"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ktp-OA-ucb" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
