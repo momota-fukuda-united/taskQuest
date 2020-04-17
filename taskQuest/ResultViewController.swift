@@ -7,12 +7,15 @@
 //
 
 import UIKit
+import RealmSwift
 
 class ResultViewController: UIViewController {
 
     @IBOutlet private weak var statusView: StatusView!
-    @IBOutlet weak var pauseOrResumeButton: ToggleButton!
-    @IBOutlet weak var skipOrCompleteButton: ToggleButton!
+    @IBOutlet private weak var pauseOrResumeButton: ToggleButton!
+    @IBOutlet private weak var skipOrCompleteButton: ToggleButton!
+    
+      private let realm = try! Realm()
     
     override func viewDidLoad() {
         super.viewDidLoad()
