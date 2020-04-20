@@ -88,6 +88,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         if self.defaults.bool(forKey: "initialLaunch") == true {
             print("initial setup start")
             self.initialSetUp()
+        } else {
+            self.realmMigration()
         }
 
         return true
