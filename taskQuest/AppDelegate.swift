@@ -24,6 +24,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         self.realmMigration()
         // シードデータ投入
         self.insertSeedData()
+        self.insertInitialData()
         // 初回起動済みのフラグを立てる
         self.defaults.set(false, forKey: "initialLaunch")
         self.defaults.synchronize()
@@ -53,12 +54,28 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let realm = try! Realm()
     }
 
+    // マスターデータの設定
     func insertSeedData() {
         // realm
         let realm = try! Realm()
 
         // 書き込み処理
-        try! realm.write {}
+        try! realm.write {
+            realm.add(StatusMaster.master, update: .all)
+        }
+    }
+
+    // マスターデータ以外の初期データの設定
+    func insertInitialData() {
+        // realm
+        let realm = try! Realm()
+
+        // 書き込み処理
+        try! realm.write {
+            let defaultStatus = realm.objects(StatusMaster.self).filter("id == 0").first!
+            let status = defaultStatus.createInitData()
+            realm.add(status, update: .error)
+        }
     }
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {

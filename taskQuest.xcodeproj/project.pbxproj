@@ -25,6 +25,7 @@
 		A0628DC824486167002B9914 /* OnEndTaskViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0628DC724486167002B9914 /* OnEndTaskViewController.swift */; };
 		A0628DCA24495137002B9914 /* ResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0628DC924495137002B9914 /* ResultViewController.swift */; };
 		A0628DCC244956AD002B9914 /* ToggleButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0628DCB244956AD002B9914 /* ToggleButton.swift */; };
+		A0628DD524499CBC002B9914 /* StatusMaster.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0628DD424499CBC002B9914 /* StatusMaster.swift */; };
 		A0A2FAB52446B734002F3C62 /* Status.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0A2FAB42446B734002F3C62 /* Status.swift */; };
 		A0A2FAB62446E38F002F3C62 /* TaskCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A03411132445BC7D0051DAF1 /* TaskCell.swift */; };
 		A0A2FABB2446EB2E002F3C62 /* UISegmentedControl.Extention.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0A2FABA2446EB2E002F3C62 /* UISegmentedControl.Extention.swift */; };
@@ -58,6 +59,7 @@
 		A0628DC724486167002B9914 /* OnEndTaskViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnEndTaskViewController.swift; sourceTree = "<group>"; };
 		A0628DC924495137002B9914 /* ResultViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultViewController.swift; sourceTree = "<group>"; };
 		A0628DCB244956AD002B9914 /* ToggleButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToggleButton.swift; sourceTree = "<group>"; };
+		A0628DD424499CBC002B9914 /* StatusMaster.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusMaster.swift; sourceTree = "<group>"; };
 		A0A2FAB42446B734002F3C62 /* Status.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Status.swift; sourceTree = "<group>"; };
 		A0A2FABA2446EB2E002F3C62 /* UISegmentedControl.Extention.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UISegmentedControl.Extention.swift; sourceTree = "<group>"; };
 		A0A2FABC24470F51002F3C62 /* ReserveViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReserveViewController.swift; sourceTree = "<group>"; };
@@ -114,6 +116,7 @@
 		A03410D324442C140051DAF1 /* taskQuest */ = {
 			isa = PBXGroup;
 			children = (
+				A0628DD324499CA4002B9914 /* MasterData */,
 				A03410D424442C140051DAF1 /* AppDelegate.swift */,
 				A03410D624442C140051DAF1 /* SceneDelegate.swift */,
 				A03410D824442C140051DAF1 /* TopViewController.swift */,
@@ -140,6 +143,14 @@
 				A0628DCB244956AD002B9914 /* ToggleButton.swift */,
 			);
 			path = taskQuest;
+			sourceTree = "<group>";
+		};
+		A0628DD324499CA4002B9914 /* MasterData */ = {
+			isa = PBXGroup;
+			children = (
+				A0628DD424499CBC002B9914 /* StatusMaster.swift */,
+			);
+			path = MasterData;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -266,6 +277,7 @@
 				A03411162445C0990051DAF1 /* Definition.swift in Sources */,
 				A0A2FABF2447F05D002F3C62 /* UINavigationController.Extention.swift in Sources */,
 				A03410D524442C140051DAF1 /* AppDelegate.swift in Sources */,
+				A0628DD524499CBC002B9914 /* StatusMaster.swift in Sources */,
 				A0A2FABD24470F51002F3C62 /* ReserveViewController.swift in Sources */,
 				A0628DCA24495137002B9914 /* ResultViewController.swift in Sources */,
 				A0A2FABB2446EB2E002F3C62 /* UISegmentedControl.Extention.swift in Sources */,

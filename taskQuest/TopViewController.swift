@@ -6,6 +6,7 @@
 //  Copyright © 2020 momota-fukuda. All rights reserved.
 //
 
+import Foundation
 import RealmSwift
 import UIKit
 
@@ -17,13 +18,17 @@ class TopViewController: UIViewController, UITableViewDelegate, UITableViewDataS
     var tasks = try! Realm().objects(Task.self)
         .sorted(byKeyPath: "startingTime", ascending: true)
         .sorted(byKeyPath: "isCompleted", ascending: true)
+    var status = try! Realm().objects(Status.self)
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
         
+        // Do any additional setup after loading the view.
         self.taskTable.delegate = self
         self.taskTable.dataSource = self
+        
+        let status = self.status.filter("id == 0").first!
+        self.statusView.set(status: status)
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -71,7 +76,6 @@ class TopViewController: UIViewController, UITableViewDelegate, UITableViewDataS
                 self.realm.delete(self.tasks[indexPath.row])
                 tableView.deleteRows(at: [indexPath], with: .fade)
             }
-            break
         default:
             break
         }
