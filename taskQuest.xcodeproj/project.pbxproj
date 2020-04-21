@@ -26,8 +26,18 @@
 		A0628DCA24495137002B9914 /* ResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0628DC924495137002B9914 /* ResultViewController.swift */; };
 		A0628DCC244956AD002B9914 /* ToggleButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0628DCB244956AD002B9914 /* ToggleButton.swift */; };
 		A0628DD524499CBC002B9914 /* StatusMaster.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0628DD424499CBC002B9914 /* StatusMaster.swift */; };
+		A0628DDD244DA0EB002B9914 /* RootEventMaster.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0628DDC244DA0EB002B9914 /* RootEventMaster.swift */; };
+		A0628DDF244DA4FA002B9914 /* EventType.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0628DDE244DA4FA002B9914 /* EventType.swift */; };
 		A0628DE2244E90E7002B9914 /* EventTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0628DE0244E90E7002B9914 /* EventTableViewCell.swift */; };
 		A0628DE3244E90E7002B9914 /* EventTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A0628DE1244E90E7002B9914 /* EventTableViewCell.xib */; };
+		A0628DE5244E9F19002B9914 /* EventMasterProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0628DE4244E9F19002B9914 /* EventMasterProtocol.swift */; };
+		A0628DE7244E9FB9002B9914 /* EventPtorocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0628DE6244E9FB9002B9914 /* EventPtorocol.swift */; };
+		A0628DE9244EA053002B9914 /* EventResultType.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0628DE8244EA053002B9914 /* EventResultType.swift */; };
+		A0628DEC244EC125002B9914 /* EmptyEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0628DEB244EC125002B9914 /* EmptyEvent.swift */; };
+		A0628DEE244EC23B002B9914 /* TextEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0628DED244EC23B002B9914 /* TextEvent.swift */; };
+		A0628DF0244EC580002B9914 /* EventMasterUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0628DEF244EC580002B9914 /* EventMasterUtil.swift */; };
+		A0628DF2244EC89E002B9914 /* GenericEventMasterSelector.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0628DF1244EC89E002B9914 /* GenericEventMasterSelector.swift */; };
+		A0628DF4244EC8D1002B9914 /* EventSelectorProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0628DF3244EC8D1002B9914 /* EventSelectorProtocol.swift */; };
 		A0A2FAB52446B734002F3C62 /* Status.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0A2FAB42446B734002F3C62 /* Status.swift */; };
 		A0A2FAB62446E38F002F3C62 /* TaskCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A03411132445BC7D0051DAF1 /* TaskCell.swift */; };
 		A0A2FABB2446EB2E002F3C62 /* UISegmentedControl.Extention.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0A2FABA2446EB2E002F3C62 /* UISegmentedControl.Extention.swift */; };
@@ -62,8 +72,18 @@
 		A0628DC924495137002B9914 /* ResultViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultViewController.swift; sourceTree = "<group>"; };
 		A0628DCB244956AD002B9914 /* ToggleButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToggleButton.swift; sourceTree = "<group>"; };
 		A0628DD424499CBC002B9914 /* StatusMaster.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusMaster.swift; sourceTree = "<group>"; };
+		A0628DDC244DA0EB002B9914 /* RootEventMaster.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootEventMaster.swift; sourceTree = "<group>"; };
+		A0628DDE244DA4FA002B9914 /* EventType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventType.swift; sourceTree = "<group>"; };
 		A0628DE0244E90E7002B9914 /* EventTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventTableViewCell.swift; sourceTree = "<group>"; };
 		A0628DE1244E90E7002B9914 /* EventTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EventTableViewCell.xib; sourceTree = "<group>"; };
+		A0628DE4244E9F19002B9914 /* EventMasterProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventMasterProtocol.swift; sourceTree = "<group>"; };
+		A0628DE6244E9FB9002B9914 /* EventPtorocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventPtorocol.swift; sourceTree = "<group>"; };
+		A0628DE8244EA053002B9914 /* EventResultType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventResultType.swift; sourceTree = "<group>"; };
+		A0628DEB244EC125002B9914 /* EmptyEvent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyEvent.swift; sourceTree = "<group>"; };
+		A0628DED244EC23B002B9914 /* TextEvent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextEvent.swift; sourceTree = "<group>"; };
+		A0628DEF244EC580002B9914 /* EventMasterUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventMasterUtil.swift; sourceTree = "<group>"; };
+		A0628DF1244EC89E002B9914 /* GenericEventMasterSelector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenericEventMasterSelector.swift; sourceTree = "<group>"; };
+		A0628DF3244EC8D1002B9914 /* EventSelectorProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventSelectorProtocol.swift; sourceTree = "<group>"; };
 		A0A2FAB42446B734002F3C62 /* Status.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Status.swift; sourceTree = "<group>"; };
 		A0A2FABA2446EB2E002F3C62 /* UISegmentedControl.Extention.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UISegmentedControl.Extention.swift; sourceTree = "<group>"; };
 		A0A2FABC24470F51002F3C62 /* ReserveViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReserveViewController.swift; sourceTree = "<group>"; };
@@ -120,6 +140,7 @@
 		A03410D324442C140051DAF1 /* taskQuest */ = {
 			isa = PBXGroup;
 			children = (
+				A0628DEA244EC0FE002B9914 /* Event */,
 				A0628DD324499CA4002B9914 /* MasterData */,
 				A03410D424442C140051DAF1 /* AppDelegate.swift */,
 				A03410D624442C140051DAF1 /* SceneDelegate.swift */,
@@ -155,8 +176,25 @@
 			isa = PBXGroup;
 			children = (
 				A0628DD424499CBC002B9914 /* StatusMaster.swift */,
+				A0628DDC244DA0EB002B9914 /* RootEventMaster.swift */,
+				A0628DE4244E9F19002B9914 /* EventMasterProtocol.swift */,
+				A0628DEF244EC580002B9914 /* EventMasterUtil.swift */,
+				A0628DF1244EC89E002B9914 /* GenericEventMasterSelector.swift */,
+				A0628DF3244EC8D1002B9914 /* EventSelectorProtocol.swift */,
 			);
 			path = MasterData;
+			sourceTree = "<group>";
+		};
+		A0628DEA244EC0FE002B9914 /* Event */ = {
+			isa = PBXGroup;
+			children = (
+				A0628DE6244E9FB9002B9914 /* EventPtorocol.swift */,
+				A0628DDE244DA4FA002B9914 /* EventType.swift */,
+				A0628DE8244EA053002B9914 /* EventResultType.swift */,
+				A0628DEB244EC125002B9914 /* EmptyEvent.swift */,
+				A0628DED244EC23B002B9914 /* TextEvent.swift */,
+			);
+			path = Event;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -277,14 +315,22 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A0628DEC244EC125002B9914 /* EmptyEvent.swift in Sources */,
 				A0A2FAB62446E38F002F3C62 /* TaskCell.swift in Sources */,
+				A0628DF2244EC89E002B9914 /* GenericEventMasterSelector.swift in Sources */,
 				A03410D924442C140051DAF1 /* TopViewController.swift in Sources */,
 				A0A2FAB52446B734002F3C62 /* Status.swift in Sources */,
 				A0628DC6244838A5002B9914 /* DoingViewController.swift in Sources */,
 				A03411162445C0990051DAF1 /* Definition.swift in Sources */,
 				A0A2FABF2447F05D002F3C62 /* UINavigationController.Extention.swift in Sources */,
+				A0628DDD244DA0EB002B9914 /* RootEventMaster.swift in Sources */,
+				A0628DDF244DA4FA002B9914 /* EventType.swift in Sources */,
 				A03410D524442C140051DAF1 /* AppDelegate.swift in Sources */,
+				A0628DEE244EC23B002B9914 /* TextEvent.swift in Sources */,
 				A0628DD524499CBC002B9914 /* StatusMaster.swift in Sources */,
+				A0628DF0244EC580002B9914 /* EventMasterUtil.swift in Sources */,
+				A0628DE7244E9FB9002B9914 /* EventPtorocol.swift in Sources */,
+				A0628DF4244EC8D1002B9914 /* EventSelectorProtocol.swift in Sources */,
 				A0A2FABD24470F51002F3C62 /* ReserveViewController.swift in Sources */,
 				A0628DCA24495137002B9914 /* ResultViewController.swift in Sources */,
 				A0628DE2244E90E7002B9914 /* EventTableViewCell.swift in Sources */,
@@ -293,10 +339,12 @@
 				A03410D724442C140051DAF1 /* SceneDelegate.swift in Sources */,
 				A03411122445B1F10051DAF1 /* TaskType.swift in Sources */,
 				A0628DCC244956AD002B9914 /* ToggleButton.swift in Sources */,
+				A0628DE5244E9F19002B9914 /* EventMasterProtocol.swift in Sources */,
 				A0628DC42447FEF6002B9914 /* ReserveDelegate.swift in Sources */,
 				A03411102445B1150051DAF1 /* Task.swift in Sources */,
 				A0628DC824486167002B9914 /* OnEndTaskViewController.swift in Sources */,
 				A034110E2445B06D0051DAF1 /* TaskDetailViewController.swift in Sources */,
+				A0628DE9244EA053002B9914 /* EventResultType.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
