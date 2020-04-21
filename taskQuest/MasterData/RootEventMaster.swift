@@ -21,7 +21,7 @@ class RootEventMaster: Object, EventMasterProtocol {
         return EmptyEvent()
     }
 
-    func getNextMasterId(result: Int) -> Int {
+    func getNextMasterId(result: Int) -> Int? {
         return self.id
     }
 }

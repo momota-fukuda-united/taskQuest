@@ -11,6 +11,7 @@ import Foundation
 class EventMasterUtil {
     static let selectorDic: [EventType: EventSelectorProtocol] = [
         .root: GenericEventSelector<RootEventMaster>(),
+        .text: GenericEventSelector<TextEventMaster>(),
     ]
 
     static func getEventMaster(type: EventType, id: Int) -> EventMasterProtocol {

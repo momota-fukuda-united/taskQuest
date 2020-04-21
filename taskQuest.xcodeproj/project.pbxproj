@@ -38,6 +38,7 @@
 		A0628DF0244EC580002B9914 /* EventMasterUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0628DEF244EC580002B9914 /* EventMasterUtil.swift */; };
 		A0628DF2244EC89E002B9914 /* GenericEventMasterSelector.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0628DF1244EC89E002B9914 /* GenericEventMasterSelector.swift */; };
 		A0628DF4244EC8D1002B9914 /* EventSelectorProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0628DF3244EC8D1002B9914 /* EventSelectorProtocol.swift */; };
+		A0628DF6244ED49E002B9914 /* TextEventMaster.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0628DF5244ED49E002B9914 /* TextEventMaster.swift */; };
 		A0A2FAB52446B734002F3C62 /* Status.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0A2FAB42446B734002F3C62 /* Status.swift */; };
 		A0A2FAB62446E38F002F3C62 /* TaskCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A03411132445BC7D0051DAF1 /* TaskCell.swift */; };
 		A0A2FABB2446EB2E002F3C62 /* UISegmentedControl.Extention.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0A2FABA2446EB2E002F3C62 /* UISegmentedControl.Extention.swift */; };
@@ -84,6 +85,7 @@
 		A0628DEF244EC580002B9914 /* EventMasterUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventMasterUtil.swift; sourceTree = "<group>"; };
 		A0628DF1244EC89E002B9914 /* GenericEventMasterSelector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenericEventMasterSelector.swift; sourceTree = "<group>"; };
 		A0628DF3244EC8D1002B9914 /* EventSelectorProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventSelectorProtocol.swift; sourceTree = "<group>"; };
+		A0628DF5244ED49E002B9914 /* TextEventMaster.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextEventMaster.swift; sourceTree = "<group>"; };
 		A0A2FAB42446B734002F3C62 /* Status.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Status.swift; sourceTree = "<group>"; };
 		A0A2FABA2446EB2E002F3C62 /* UISegmentedControl.Extention.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UISegmentedControl.Extention.swift; sourceTree = "<group>"; };
 		A0A2FABC24470F51002F3C62 /* ReserveViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReserveViewController.swift; sourceTree = "<group>"; };
@@ -181,6 +183,7 @@
 				A0628DEF244EC580002B9914 /* EventMasterUtil.swift */,
 				A0628DF1244EC89E002B9914 /* GenericEventMasterSelector.swift */,
 				A0628DF3244EC8D1002B9914 /* EventSelectorProtocol.swift */,
+				A0628DF5244ED49E002B9914 /* TextEventMaster.swift */,
 			);
 			path = MasterData;
 			sourceTree = "<group>";
@@ -338,6 +341,7 @@
 				A03410EB244435BF0051DAF1 /* StatusView.swift in Sources */,
 				A03410D724442C140051DAF1 /* SceneDelegate.swift in Sources */,
 				A03411122445B1F10051DAF1 /* TaskType.swift in Sources */,
+				A0628DF6244ED49E002B9914 /* TextEventMaster.swift in Sources */,
 				A0628DCC244956AD002B9914 /* ToggleButton.swift in Sources */,
 				A0628DE5244E9F19002B9914 /* EventMasterProtocol.swift in Sources */,
 				A0628DC42447FEF6002B9914 /* ReserveDelegate.swift in Sources */,

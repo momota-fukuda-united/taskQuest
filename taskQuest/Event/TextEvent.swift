@@ -7,9 +7,28 @@
 //
 
 import Foundation
+import RealmSwift
 
 class TextEvent: EventProtocol {
+    let textList: List<String>
+    let imageNameList: List<String?>
+    
+    var index = 0
+    
+    init(textList: List<String>, imageNameList: List<String?>) {
+        self.textList = textList
+        self.imageNameList = imageNameList
+    }
+    
     func excute(playerStatus: Status, cell: EventTableViewCell) -> EventResultType {
-        return .complete
+        let text = self.textList[self.index]
+        let imageName = self.imageNameList[self.index]
+        
+        let image = UIImage(named: imageName ?? "")
+        
+        cell.set(icon: image, text: text)
+        
+        self.index += 1
+        return self.index < self.textList.count ? .running : .complete
     }
 }
