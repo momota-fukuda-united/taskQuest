@@ -477,10 +477,16 @@
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="92Y-7f-i86" customClass="ToggleButton" customModule="taskQuest" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="202" height="40"/>
                                         <state key="normal" title="再生/一時停止"/>
+                                        <connections>
+                                            <action selector="onTapPauseOrResumeButton:" destination="XZu-N5-Kn8" eventType="touchUpInside" id="kue-Hc-6Gm"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JDl-fG-Q1B" customClass="ToggleButton" customModule="taskQuest" customModuleProvider="target">
                                         <rect key="frame" x="212" y="0.0" width="202" height="40"/>
                                         <state key="normal" title="スキップ/終了"/>
+                                        <connections>
+                                            <action selector="onTapSkipOrCompleteButton:" destination="XZu-N5-Kn8" eventType="touchUpInside" id="xR8-Ky-95I"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <constraints>

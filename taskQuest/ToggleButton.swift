@@ -19,10 +19,12 @@ class ToggleButton: UIButton {
         self.updateText()
     }
     
-    func toggle() {
+    func toggle() -> Bool {
         self.isFirstState = !self.isFirstState
         
         self.updateText()
+        
+        return self.isFirstState
     }
     
     private func updateText() {

@@ -37,4 +37,14 @@ class ResultViewController: UIViewController, UITableViewDelegate, UITableViewDa
 
         return cell
     }
+
+    @IBAction func onTapPauseOrResumeButton(_ sender: ToggleButton) {
+        if sender.toggle() {
+        } else {}
+    }
+
+    @IBAction func onTapSkipOrCompleteButton(_ sender: ToggleButton) {
+        if sender.toggle() {
+        } else {}
+    }
 }
