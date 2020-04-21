@@ -26,6 +26,8 @@
 		A0628DCA24495137002B9914 /* ResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0628DC924495137002B9914 /* ResultViewController.swift */; };
 		A0628DCC244956AD002B9914 /* ToggleButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0628DCB244956AD002B9914 /* ToggleButton.swift */; };
 		A0628DD524499CBC002B9914 /* StatusMaster.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0628DD424499CBC002B9914 /* StatusMaster.swift */; };
+		A0628DE2244E90E7002B9914 /* EventTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0628DE0244E90E7002B9914 /* EventTableViewCell.swift */; };
+		A0628DE3244E90E7002B9914 /* EventTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A0628DE1244E90E7002B9914 /* EventTableViewCell.xib */; };
 		A0A2FAB52446B734002F3C62 /* Status.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0A2FAB42446B734002F3C62 /* Status.swift */; };
 		A0A2FAB62446E38F002F3C62 /* TaskCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A03411132445BC7D0051DAF1 /* TaskCell.swift */; };
 		A0A2FABB2446EB2E002F3C62 /* UISegmentedControl.Extention.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0A2FABA2446EB2E002F3C62 /* UISegmentedControl.Extention.swift */; };
@@ -60,6 +62,8 @@
 		A0628DC924495137002B9914 /* ResultViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultViewController.swift; sourceTree = "<group>"; };
 		A0628DCB244956AD002B9914 /* ToggleButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToggleButton.swift; sourceTree = "<group>"; };
 		A0628DD424499CBC002B9914 /* StatusMaster.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusMaster.swift; sourceTree = "<group>"; };
+		A0628DE0244E90E7002B9914 /* EventTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventTableViewCell.swift; sourceTree = "<group>"; };
+		A0628DE1244E90E7002B9914 /* EventTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EventTableViewCell.xib; sourceTree = "<group>"; };
 		A0A2FAB42446B734002F3C62 /* Status.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Status.swift; sourceTree = "<group>"; };
 		A0A2FABA2446EB2E002F3C62 /* UISegmentedControl.Extention.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UISegmentedControl.Extention.swift; sourceTree = "<group>"; };
 		A0A2FABC24470F51002F3C62 /* ReserveViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReserveViewController.swift; sourceTree = "<group>"; };
@@ -141,6 +145,8 @@
 				A0628DC724486167002B9914 /* OnEndTaskViewController.swift */,
 				A0628DC924495137002B9914 /* ResultViewController.swift */,
 				A0628DCB244956AD002B9914 /* ToggleButton.swift */,
+				A0628DE0244E90E7002B9914 /* EventTableViewCell.swift */,
+				A0628DE1244E90E7002B9914 /* EventTableViewCell.xib */,
 			);
 			path = taskQuest;
 			sourceTree = "<group>";
@@ -213,6 +219,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A0628DE3244E90E7002B9914 /* EventTableViewCell.xib in Resources */,
 				A03410EC244443400051DAF1 /* StatusView.xib in Resources */,
 				A03410E124442C160051DAF1 /* LaunchScreen.storyboard in Resources */,
 				A03410DE24442C160051DAF1 /* Assets.xcassets in Resources */,
@@ -280,6 +287,7 @@
 				A0628DD524499CBC002B9914 /* StatusMaster.swift in Sources */,
 				A0A2FABD24470F51002F3C62 /* ReserveViewController.swift in Sources */,
 				A0628DCA24495137002B9914 /* ResultViewController.swift in Sources */,
+				A0628DE2244E90E7002B9914 /* EventTableViewCell.swift in Sources */,
 				A0A2FABB2446EB2E002F3C62 /* UISegmentedControl.Extention.swift in Sources */,
 				A03410EB244435BF0051DAF1 /* StatusView.swift in Sources */,
 				A03410D724442C140051DAF1 /* SceneDelegate.swift in Sources */,
