@@ -11,8 +11,6 @@ import Realm
 import RealmSwift
 
 class TextEventMaster: Object, EventMasterProtocol {
-
-    
     @objc dynamic var id = 0
     let nextId = RealmOptional<Int>()
     let textList = List<String>()
@@ -45,11 +43,11 @@ class TextEventMaster: Object, EventMasterProtocol {
     override class func primaryKey() -> String? {
         return "id"
     }
-    
+
     func create() -> EventProtocol {
-        return TextEvent()
+        return TextEvent(textList: self.textList, imageNameList: self.imageNameList)
     }
-    
+
     func getNextMasterId(result: Int) -> Int? {
         return self.nextId.value
     }
