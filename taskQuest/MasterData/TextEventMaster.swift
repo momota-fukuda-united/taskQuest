@@ -11,16 +11,28 @@ import Realm
 import RealmSwift
 
 class TextEventMaster: Object, EventMasterProtocol {
-    @objc dynamic var id = 0
-    let nextId = RealmOptional<Int>()
-    let textList = List<String>()
-    let imageNameList = List<String?>()
+    @objc private dynamic var id = 0
 
-    convenience init(id: Int, nextId: Int?, eventList: [(imageName: String?, text: String)]) {
+    private let nextId = RealmOptional<Int>()
+    private let nextTypeRow = RealmOptional<Int>()
+
+    private let textList = List<String>()
+    private let imageNameList = List<String?>()
+
+    override class func primaryKey() -> String? {
+        return "id"
+    }
+
+    var nextType: EventType? {
+        return self.nextTypeRow.value != nil ? EventType(rawValue: self.nextTypeRow.value!) : nil
+    }
+
+    convenience init(id: Int, next: (id: Int, type: EventType)?, eventList: [(imageName: String?, text: String)]) {
         self.init()
 
         self.id = id
-        self.nextId.value = nextId
+        self.nextId.value = next?.id
+        self.nextTypeRow.value = next?.type.rawValue
 
         for (imageName, text) in eventList {
             self.imageNameList.append(imageName)
@@ -40,15 +52,30 @@ class TextEventMaster: Object, EventMasterProtocol {
         super.init(value: value, schema: schema)
     }
 
-    override class func primaryKey() -> String? {
-        return "id"
-    }
-
     func create() -> EventProtocol {
         return TextEvent(textList: self.textList, imageNameList: self.imageNameList)
     }
 
-    func getNextMasterId(result: Int) -> Int? {
-        return self.nextId.value
+    func getNextMaster(result: Int) -> EventMasterProtocol? {
+        return self.nextId.value != nil ? EventMasterUtil.getEventMaster(type: self.nextType!, id: self.nextId.value!) : nil
     }
+
+    static let master: [TextEventMaster] = [
+        TextEventMaster(id: 0, next: nil, eventList: [
+            (nil, "冒険開始！"),
+            (Definition.heroNormaiFaceImageName, "今日も頑張るぞ！"),
+            (Definition.heroNormaiFaceImageName, "何が起こるか楽しみだ！"),
+        ]),
+        TextEventMaster(id: 1, next: nil, eventList: [
+            (Definition.heroNormaiFaceImageName, "今日も疲れたけけど、頑張ったな！"),
+            (Definition.heroNormaiFaceImageName, "ゆっくり休もう"),
+            (nil, "冒険終了！")
+        ]),
+        TextEventMaster(id: 1000, next: nil, eventList: [
+            (Definition.heroNormaiFaceImageName, "風が気持ちいい...")
+        ]),
+        TextEventMaster(id: 1001, next: nil, eventList: [
+            (Definition.heroNormaiFaceImageName, "何かないかな？")
+        ]),
+    ]
 }

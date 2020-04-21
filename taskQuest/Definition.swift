@@ -18,4 +18,6 @@ class Definition {
     static let emptyStartingTimeText = "開始日時なし"
     
     static let realmSchemaVersion: UInt64 = 1
+    
+    static let heroNormaiFaceImageName = "face_00_00"
 }

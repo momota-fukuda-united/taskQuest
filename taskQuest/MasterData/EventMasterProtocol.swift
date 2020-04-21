@@ -11,5 +11,5 @@ import Foundation
 protocol EventMasterProtocol {
     func create() -> EventProtocol
 
-    func getNextMasterId(result: Int) -> Int?
+    func getNextMaster(result: Int) -> EventMasterProtocol?
 }

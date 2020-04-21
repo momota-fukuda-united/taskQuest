@@ -62,6 +62,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // 書き込み処理
         try! realm.write {
             realm.add(StatusMaster.master, update: .all)
+
+            realm.add(TextEventMaster.master, update: .all)
+
+            realm.add(RootEventMaster.master, update: .all)
         }
     }
 
