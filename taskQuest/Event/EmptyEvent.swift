@@ -10,6 +10,6 @@ import Foundation
 
 class EmptyEvent: EventProtocol {
     func excute(playerStatus: Status, cell: EventTableViewCell) -> EventResultType {
-        return .empty
+        return .complete
     }
 }

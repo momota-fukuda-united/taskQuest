@@ -9,8 +9,6 @@
 import Foundation
 
 enum EventResultType: Int {
-    case empty
-    
     case running
     case failed
     case complete
