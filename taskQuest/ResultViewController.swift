@@ -19,13 +19,13 @@ class ResultViewController: UIViewController, UITableViewDelegate, UITableViewDa
 
     private let realm = try! Realm()
     private let heroStatus = try! Realm().objects(Status.self).filter("id == \(Definition.heroId)").first!
-   private var rootEventMasters = try! Realm().objects(RootEventMaster.self)
-    
+    private var rootEventMasters = try! Realm().objects(RootEventMaster.self)
+
     private var timer: Timer?
 
     private var nowMaster: EventMasterProtocol!
     private var nowEvent: EventProtocol!
-    
+
     // 仮
     private var remainingEvent = 10
 
@@ -56,48 +56,46 @@ class ResultViewController: UIViewController, UITableViewDelegate, UITableViewDa
         self.timer?.fire()
     }
 
-    private func onCompleteOneEvent(){
+    private func onCompleteOneEvent() {
         self.remainingEvent -= 1
-        
+
         self.nowMaster = self.getRandomEventMaster(timing: self.remainingEvent <= 0 ? .end : .random)
     }
-    
-    private func goNextEvent(){
+
+    private func goNextEvent() {
         self.nowEvent = self.nowMaster.create()
     }
-    
+
     private func goNextEventMaster(completeType: Int) {
         let next = self.nowMaster.getNextMaster(completeType: completeType)
-        
+
         if next == nil {
             self.onCompleteOneEvent()
         } else {
             self.nowMaster = next!
         }
-        
+
         self.goNextEvent()
     }
-    
-    private func getRandomEventMaster(timing: EventTimingType) -> RootEventMaster{
+
+    private func getRandomEventMaster(timing: EventTimingType) -> RootEventMaster {
         return self.rootEventMasters.filter("timingRow = \(timing.rawValue)").randomElement()!
     }
-    
-    private func initFromMaster(){
+
+    private func initFromMaster() {
         self.nowEvent = self.nowMaster.create()
     }
 
     private func update() {
-
-        
         let result = self.nowEvent.excute(playerStatus: self.heroStatus, table: self.eventTableView)
-        
+
         switch result {
         case .running:
             return
         case .failed:
             /// @todo 専用の処理
             return
-        
+
         default:
             // 残りは全て成功なはず
             let completeType = result.completeType
@@ -105,7 +103,7 @@ class ResultViewController: UIViewController, UITableViewDelegate, UITableViewDa
                 print("イベントの結果\(result)を成功として処理しようとしましたが、完了タイプが\(completeType)でした")
                 return
             }
-            
+
             self.goNextEventMaster(completeType: completeType)
             return
         }
