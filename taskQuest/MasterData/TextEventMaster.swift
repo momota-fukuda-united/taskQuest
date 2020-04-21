@@ -56,7 +56,7 @@ class TextEventMaster: Object, EventMasterProtocol {
         return TextEvent(textList: self.textList, imageNameList: self.imageNameList)
     }
 
-    func getNextMaster(result: Int) -> EventMasterProtocol? {
+    func getNextMaster(completeType: Int) -> EventMasterProtocol? {
         return self.nextId.value != nil ? EventMasterUtil.getEventMaster(type: self.nextType!, id: self.nextId.value!) : nil
     }
 

@@ -19,5 +19,6 @@ class Definition {
     
     static let realmSchemaVersion: UInt64 = 1
     
+    static let heroId = 0
     static let heroNormaiFaceImageName = "face_00_00"
 }

@@ -9,9 +9,24 @@
 import UIKit
 
 class EventTableViewCell: UITableViewCell {
+    static let cellId = "eventCell"
+    
     @IBOutlet private var iconView: UIImageView!
     @IBOutlet private var textView: UITextView!
 
+    override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
+        super.init(style: style, reuseIdentifier: reuseIdentifier)
+
+    }
+    
+    required init?(coder: NSCoder) {
+        super.init(coder: coder)
+        
+
+    }
+    
+
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

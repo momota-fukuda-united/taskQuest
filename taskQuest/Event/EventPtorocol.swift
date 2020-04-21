@@ -6,8 +6,8 @@
 //  Copyright © 2020 momota-fukuda. All rights reserved.
 //
 
-import Foundation
+import UIKit
 
 protocol EventProtocol {
-    func excute(playerStatus: Status, cell: EventTableViewCell) -> EventResultType
+    func excute(playerStatus: Status, table: UITableView) -> EventResultType
 }
