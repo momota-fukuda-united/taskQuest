@@ -90,8 +90,8 @@ class ResultViewController: UIViewController, UITableViewDelegate, UITableViewDa
         let resultType = results.result
         let infos = results.infos
 
-        self.eventInfos.append(contentsOf: infos)
-        for _ in 0 ..< infos.count {
+        for index in 0 ..< infos.count {
+            self.eventInfos.append(infos[index])
             self.eventTableView.apend(cellClass: EventTableViewCell.self, id: EventTableViewCell.cellId)
         }
 
