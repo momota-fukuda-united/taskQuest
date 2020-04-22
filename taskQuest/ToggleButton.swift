@@ -24,7 +24,7 @@ class ToggleButton: UIButton {
         
         self.updateText()
         
-        return self.isFirstState
+        return !self.isFirstState
     }
     
     private func updateText() {
