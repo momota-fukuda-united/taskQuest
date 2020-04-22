@@ -43,6 +43,8 @@ class ResultViewController: UIViewController, UITableViewDelegate, UITableViewDa
         self.pauseOrResumeButton.set(firstStateText: "一時停止", secondStateText: "再開")
         self.skipOrCompleteButton.set(firstStateText: "スキップ", secondStateText: "終了")
 
+        self.statusView.set(status: self.heroStatus)
+        
         self.timer = Timer.scheduledTimer(timeInterval: ResultViewController.timerInterval, target: self, selector: #selector(self.updateTimer(_:)), userInfo: nil, repeats: true)
     }
 
@@ -98,6 +100,8 @@ class ResultViewController: UIViewController, UITableViewDelegate, UITableViewDa
             self.eventTableView.apend(cellClass: EventTableViewCell.self, id: EventTableViewCell.cellId)
         }
 
+        self.statusView.set(status: self.heroStatus)
+        
         switch resultType {
         case .running:
             return
