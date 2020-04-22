@@ -29,7 +29,7 @@ class ResultViewController: UIViewController, UITableViewDelegate, UITableViewDa
     private var eventInfos: [EventInfo] = []
 
     // 仮
-    private var remainingEvent = 10
+    private var remainingEvent = 20
 
     override func viewDidLoad() {
         super.viewDidLoad()
