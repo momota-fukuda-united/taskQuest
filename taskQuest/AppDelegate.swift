@@ -96,6 +96,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             self.realmMigration()
         }
 
+        print(Realm.Configuration.defaultConfiguration.fileURL)
+        
         return true
     }
 
