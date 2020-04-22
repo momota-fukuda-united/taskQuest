@@ -10,9 +10,16 @@ import UIKit
 
 extension UITableView {
     func apend<T: UITableViewCell>(id: String, section: Int = 0) -> T {
+        self.beginUpdates()
+
+        self.register(T.self, forCellReuseIdentifier: id)
         let newRow = self.numberOfRows(inSection: section)
         let indexPath = IndexPath(row: newRow, section: section)
         self.insertRows(at: [indexPath], with: .automatic)
-        return self.dequeueReusableCell(withIdentifier: EventTableViewCell.cellId, for: indexPath) as! T
+        let cell = self.dequeueReusableCell(withIdentifier: id, for: indexPath) as! T
+
+        self.endUpdates()
+
+        return cell
     }
 }
