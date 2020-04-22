@@ -16,11 +16,11 @@ class TextEvent: EventProtocol {
     
     private let textList: List<String>
     private let imageNameList: List<String?>
-    private let changeStatusEventList: List<ChangeStatusEventMaster?>
+    private let changeStatusEventList: List<ChangeStatusEventMaster>
     
     private var index = 0
     
-    init(consumedAp: Int, textList: List<String>, imageNameList: List<String?>, changeStatusEventList: List<ChangeStatusEventMaster?>) {
+    init(consumedAp: Int, textList: List<String>, imageNameList: List<String?>, changeStatusEventList: List<ChangeStatusEventMaster>) {
         self.consumedAp = consumedAp
         self.textList = textList
         self.imageNameList = imageNameList
@@ -30,17 +30,15 @@ class TextEvent: EventProtocol {
     func excute(playerStatus: Status) -> EventResultData {
         let text = self.textList[self.index]
         let imageName = self.imageNameList[self.index]
-        let changeStatusEvent = self.changeStatusEventList[self.index]?.create()
+        let changeStatusEvent = self.changeStatusEventList[self.index].create()
         
         self.index += 1
         let result: EventResultType = self.index < self.textList.count ? .running : .complete
         
-        let changeStatusResults = changeStatusEvent?.excute(playerStatus: playerStatus)
+        let changeStatusResults = changeStatusEvent.excute(playerStatus: playerStatus)
         
         var infos = [(imageName, text)]
-        if changeStatusResults != nil {
-            infos.append(contentsOf: changeStatusResults!.infos)
-        }
+        infos.append(contentsOf: changeStatusResults.infos)
         
         return (result, infos)
     }

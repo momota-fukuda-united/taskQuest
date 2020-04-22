@@ -32,7 +32,7 @@ class TextEventMaster: Object, EventMasterProtocol {
 
     private let textList = List<String>()
     private let imageNameList = List<String?>()
-    private let changeStatusEventList = List<ChangeStatusEventMaster?>()
+    private let changeStatusEventList = List<ChangeStatusEventMaster>()
 
     override class func primaryKey() -> String? {
         return "id"
@@ -53,7 +53,7 @@ class TextEventMaster: Object, EventMasterProtocol {
         for helper in eventList {
             self.imageNameList.append(helper.imageName)
             self.textList.append(helper.text)
-            self.changeStatusEventList.append(helper.changeStatusEvent)
+            self.changeStatusEventList.append(helper.changeStatusEvent ?? ChangeStatusEventMaster())
         }
     }
 
