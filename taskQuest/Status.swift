@@ -14,6 +14,8 @@ class Status: Object {
 
     @objc dynamic var maxHp = 0
     @objc dynamic var hp = 0
+    @objc dynamic var maxAp = 0
+    @objc dynamic var ap = 0
     @objc dynamic var atk = 0
     @objc dynamic var def = 0
     @objc dynamic var int = 0
@@ -24,12 +26,14 @@ class Status: Object {
         return "id"
     }
 
-    init(id: Int = 0, maxHp: Int = 0, atk: Int = 0, def: Int = 0, int: Int = 0, luk: Int = 0, gold: Int = 0) {
+    init(id: Int, maxHp: Int, maxAp: Int, atk: Int, def: Int, int: Int, luk: Int, gold: Int) {
         super.init()
-        
+
         self.id = id
         self.maxHp = maxHp
         self.hp = self.maxHp
+        self.maxAp = maxAp
+        self.ap = self.maxAp
         self.atk = atk
         self.def = def
         self.int = int

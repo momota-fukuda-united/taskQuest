@@ -10,12 +10,18 @@ import Foundation
 import RealmSwift
 
 class TextEvent: EventProtocol {
-    let textList: List<String>
-    let imageNameList: List<String?>
+
+    private let realm = try! Realm()
     
-    var index = 0
+    private let consumedAp: Int
     
-    init(textList: List<String>, imageNameList: List<String?>) {
+    private let textList: List<String>
+    private let imageNameList: List<String?>
+    
+    private var index = 0
+    
+    init(consumedAp: Int, textList: List<String>, imageNameList: List<String?>) {
+        self.consumedAp = consumedAp
         self.textList = textList
         self.imageNameList = imageNameList
     }
@@ -28,5 +34,11 @@ class TextEvent: EventProtocol {
         let result: EventResultType = self.index < self.textList.count ? .running : .complete
         
         return (result, [(imageName, text)])
+    }
+    
+    func onComplete(playerStatus: Status) {
+        try! self.realm.write {
+            playerStatus.ap -= self.consumedAp
+        }
     }
 }

@@ -12,4 +12,6 @@ class EmptyEvent: EventProtocol {
     func excute(playerStatus: Status) -> EventResultData {
         return (.empty, [])
     }
+
+    func onComplete(playerStatus: Status) {}
 }

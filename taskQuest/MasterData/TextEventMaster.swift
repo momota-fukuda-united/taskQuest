@@ -13,6 +13,8 @@ import RealmSwift
 class TextEventMaster: Object, EventMasterProtocol {
     @objc private dynamic var id = 0
 
+    @objc private dynamic var consumedAp = 0
+    
     private let nextId = RealmOptional<Int>()
     private let nextTypeRow = RealmOptional<Int>()
 
@@ -27,10 +29,11 @@ class TextEventMaster: Object, EventMasterProtocol {
         return self.nextTypeRow.value != nil ? EventType(rawValue: self.nextTypeRow.value!) : nil
     }
 
-    convenience init(id: Int, next: (id: Int, type: EventType)?, eventList: [(imageName: String?, text: String)]) {
+    convenience init(id: Int, consumedAp: Int = 1, next: (id: Int, type: EventType)?, eventList: [(imageName: String?, text: String)]) {
         self.init()
 
         self.id = id
+        self.consumedAp = consumedAp
         self.nextId.value = next?.id
         self.nextTypeRow.value = next?.type.rawValue
 
@@ -53,7 +56,7 @@ class TextEventMaster: Object, EventMasterProtocol {
     }
 
     func create() -> EventProtocol {
-        return TextEvent(textList: self.textList, imageNameList: self.imageNameList)
+        return TextEvent(consumedAp: self.consumedAp, textList: self.textList, imageNameList: self.imageNameList)
     }
 
     func getNextMaster(completeType: Int) -> EventMasterProtocol? {
@@ -61,12 +64,12 @@ class TextEventMaster: Object, EventMasterProtocol {
     }
 
     static let master: [TextEventMaster] = [
-        TextEventMaster(id: 0, next: nil, eventList: [
+        TextEventMaster(id: 0, consumedAp: 0, next: nil, eventList: [
             (nil, "冒険開始！"),
             (Definition.heroNormaiFaceImageName, "今日も頑張るぞ！"),
             (Definition.heroNormaiFaceImageName, "何が起こるか楽しみだ！"),
         ]),
-        TextEventMaster(id: 1, next: nil, eventList: [
+        TextEventMaster(id: 1, consumedAp: 0, next: nil, eventList: [
             (Definition.heroNormaiFaceImageName, "今日も疲れたけけど、頑張ったな！"),
             (Definition.heroNormaiFaceImageName, "ゆっくり休もう"),
             (nil, "冒険終了！")

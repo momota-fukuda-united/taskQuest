@@ -25,11 +25,8 @@ class ResultViewController: UIViewController, UITableViewDelegate, UITableViewDa
 
     private var nowMaster: EventMasterProtocol!
     private var nowEvent: EventProtocol!
-    
-    private var eventInfos: [EventInfo] = []
 
-    // 仮
-    private var remainingEvent = 20
+    private var eventInfos: [EventInfo] = []
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -39,7 +36,7 @@ class ResultViewController: UIViewController, UITableViewDelegate, UITableViewDa
         self.eventTableView.dataSource = self
 
         self.nowMaster = self.getRandomEventMaster(timing: .start)
-        self.initEvent()
+        self.transitNextEvent()
         self.pauseOrResumeButton.set(firstStateText: "一時停止", secondStateText: "再開")
         self.skipOrCompleteButton.set(firstStateText: "スキップ", secondStateText: "終了")
 
@@ -59,16 +56,16 @@ class ResultViewController: UIViewController, UITableViewDelegate, UITableViewDa
     }
 
     private func onCompleteOneEvent() {
-        self.remainingEvent -= 1
-
-        self.nowMaster = self.getRandomEventMaster(timing: self.remainingEvent <= 0 ? .end : .random)
+        self.nowMaster = self.getRandomEventMaster(timing: self.heroStatus.ap <= 0 ? .end : .random)
     }
 
-    private func initEvent() {
+    private func transitNextEvent() {
         self.nowEvent = self.nowMaster.create()
     }
 
-    private func goNextEventMaster(completeType: Int) {
+    private func transitNextEventMaster(completeType: Int) {
+        self.nowEvent.onComplete(playerStatus: self.heroStatus)
+
         let next = self.nowMaster.getNextMaster(completeType: completeType)
 
         if next == nil {
@@ -77,7 +74,7 @@ class ResultViewController: UIViewController, UITableViewDelegate, UITableViewDa
             self.nowMaster = next!
         }
 
-        self.initEvent()
+        self.transitNextEvent()
     }
 
     private func getRandomEventMaster(timing: EventTimingType) -> RootEventMaster {
@@ -92,7 +89,7 @@ class ResultViewController: UIViewController, UITableViewDelegate, UITableViewDa
         let results = self.nowEvent.excute(playerStatus: self.heroStatus)
         let resultType = results.result
         let infos = results.infos
-        
+
         self.eventInfos.append(contentsOf: infos)
         for _ in 0 ..< infos.count {
             self.eventTableView.apend(cellClass: EventTableViewCell.self, id: EventTableViewCell.cellId)
@@ -106,10 +103,10 @@ class ResultViewController: UIViewController, UITableViewDelegate, UITableViewDa
             return
         case .empty:
             // 空イベントだったので次のイベントに進めてもう1度更新
-            self.goNextEventMaster(completeType: EventResultType.complete.rawValue)
+            self.transitNextEventMaster(completeType: EventResultType.complete.rawValue)
             self.update()
             return
-            
+
         default:
             // 残りは全て成功なはず
             let completeType = resultType.completeType
@@ -118,7 +115,7 @@ class ResultViewController: UIViewController, UITableViewDelegate, UITableViewDa
                 return
             }
 
-            self.goNextEventMaster(completeType: completeType)
+            self.transitNextEventMaster(completeType: completeType)
             return
         }
     }
@@ -130,7 +127,7 @@ class ResultViewController: UIViewController, UITableViewDelegate, UITableViewDa
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "eventCell", for: indexPath) as! EventTableViewCell
         let info = self.eventInfos[indexPath.row]
-        
+
         cell.set(icon: UIImage(named: info.imageName ?? ""), text: info.text)
 
         return cell

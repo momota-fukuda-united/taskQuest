@@ -13,4 +13,6 @@ typealias EventResultData = (result: EventResultType, infos: [EventInfo])
 
 protocol EventProtocol {
     func excute(playerStatus: Status) -> EventResultData
+    
+    func onComplete(playerStatus: Status)
 }
