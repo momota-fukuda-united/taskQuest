@@ -27,7 +27,7 @@ class TextEvent: EventProtocol {
         self.changeStatusEventList = changeStatusEventList
     }
     
-    func excute(playerStatus: Status) -> EventResultData {
+    func excute(playerStatus: StatusData) -> EventResultData {
         let text = self.textList[self.index]
         let imageName = self.imageNameList[self.index]
         let changeStatusEvent = self.changeStatusEventList[self.index].create()
@@ -43,7 +43,7 @@ class TextEvent: EventProtocol {
         return (result, infos)
     }
     
-    func onComplete(playerStatus: Status) {
+    func onComplete(playerStatus: StatusData) {
         try! self.realm.write {
             playerStatus.ap -= self.consumedAp
         }

@@ -18,7 +18,7 @@ class TopViewController: UIViewController, UITableViewDelegate, UITableViewDataS
     var tasks = try! Realm().objects(Task.self)
         .sorted(byKeyPath: "startingTime", ascending: true)
         .sorted(byKeyPath: "isCompleted", ascending: true)
-    var status = try! Realm().objects(Status.self)
+    var status = try! Realm().objects(StatusData.self)
     
     override func viewDidLoad() {
         super.viewDidLoad()

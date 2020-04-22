@@ -38,7 +38,7 @@ class StatusView: UIView {
      }
      */
     
-    func set(status: Status) {
+    func set(status: StatusData) {
         self.firstStatusLabel.text = String(format: StatusView.firstStatusLabelFormat, status.hp, status.maxHp, status.ap, status.maxAp)
         self.secondStatusLabel.text = String(format: StatusView.secondStatusLabelFormat, status.atk, status.def, status.int, status.luk)
         self.thirdStatusLabel.text = String(format: StatusView.thirdStatusLabelFormat, status.gold)

@@ -32,7 +32,7 @@ class ChangeStatusEvent: EventProtocol {
         self.gold = gold
     }
 
-    func excute(playerStatus: Status) -> EventResultData {
+    func excute(playerStatus: StatusData) -> EventResultData {
         var infos: [EventInfo] = []
 
         EventUtil.setToUpDownInfo(paramName: Def.maxHpName, value: self.maxHp, infos: &infos)
@@ -49,5 +49,5 @@ class ChangeStatusEvent: EventProtocol {
         return (.complete, infos)
     }
 
-    func onComplete(playerStatus: Status) {}
+    func onComplete(playerStatus: StatusData) {}
 }

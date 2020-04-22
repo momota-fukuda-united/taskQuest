@@ -50,8 +50,8 @@ class StatusMaster: RealmSwift.Object {
         super.init(value: value, schema: schema)
     }
 
-    func createInitData() -> Status {
-        return Status(id: self.id, maxHp: self.maxHp, maxAp: self.maxAp, atk: self.atk, def: self.def, int: self.int, luk: self.luk, gold: self.gold)
+    func createInitData() -> StatusData {
+        return StatusData(id: self.id, maxHp: self.maxHp, maxAp: self.maxAp, atk: self.atk, def: self.def, int: self.int, luk: self.luk, gold: self.gold)
     }
 
     static let master: [StatusMaster] = [

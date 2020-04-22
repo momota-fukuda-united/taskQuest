@@ -9,7 +9,7 @@
 import Realm
 import RealmSwift
 
-class Status: Object {
+class StatusData: Object {
     @objc dynamic var id = 0
 
     @objc dynamic var maxHp = 0
@@ -65,5 +65,10 @@ class Status: Object {
             self.luk = max(1, self.luk + luk)
             self.gold = max(0, self.gold + gold)
         }
+    }
+    
+    func reset(){
+        self.hp = self.maxHp
+        self.ap = self.maxAp
     }
 }
