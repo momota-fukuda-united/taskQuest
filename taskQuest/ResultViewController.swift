@@ -26,6 +26,7 @@ class ResultViewController: UIViewController, UITableViewDelegate, UITableViewDa
 
     private var nowMaster: EventMasterProtocol!
     private var nowEvent: EventProtocol!
+    private var nowEventTiming: EventTimingType!
 
     private var eventInfos: [EventInfo] = []
 
@@ -34,17 +35,17 @@ class ResultViewController: UIViewController, UITableViewDelegate, UITableViewDa
 
         // Do any additional setup after loading the view.
         self.heroStatus = self.heroStatusData.create()
-        
+
         self.eventTableView.delegate = self
         self.eventTableView.dataSource = self
 
-        self.nowMaster = self.getRandomEventMaster(timing: .start)
+        self.transitRandomEventMaster(timing: .start)
         self.transitNextEvent()
         self.pauseOrResumeButton.set(firstStateText: "一時停止", secondStateText: "再開")
         self.skipOrCompleteButton.set(firstStateText: "スキップ", secondStateText: "終了")
 
         self.statusView.set(status: self.heroStatus)
-        
+
         self.timer = Timer.scheduledTimer(timeInterval: ResultViewController.timerInterval, target: self, selector: #selector(self.updateTimer(_:)), userInfo: nil, repeats: true)
     }
 
@@ -56,12 +57,17 @@ class ResultViewController: UIViewController, UITableViewDelegate, UITableViewDa
         self.timer?.invalidate()
     }
 
+    private func stopTimer() {
+        self.timer?.invalidate()
+        self.timer = nil
+    }
+
     private func resumeTimer() {
         self.timer?.fire()
     }
 
     private func onCompleteOneEvent() {
-        self.nowMaster = self.getRandomEventMaster(timing: self.heroStatus.ap <= 0 ? .end : .random)
+        self.transitRandomEventMaster(timing: self.heroStatus.ap <= 0 ? .end : .random)
     }
 
     private func transitNextEvent() {
@@ -82,8 +88,9 @@ class ResultViewController: UIViewController, UITableViewDelegate, UITableViewDa
         self.transitNextEvent()
     }
 
-    private func getRandomEventMaster(timing: EventTimingType) -> RootEventMaster {
-        return self.rootEventMasters.filter("timingRow = \(timing.rawValue)").randomElement()!
+    private func transitRandomEventMaster(timing: EventTimingType) {
+        self.nowEventTiming = timing
+        self.nowMaster = self.rootEventMasters.filter("timingRow = \(timing.rawValue)").randomElement()!
     }
 
     private func initFromMaster() {
@@ -101,7 +108,10 @@ class ResultViewController: UIViewController, UITableViewDelegate, UITableViewDa
         }
 
         self.statusView.set(status: self.heroStatus)
-        
+        DispatchQueue.main.async {
+            self.eventTableView.scrollToRow(at: IndexPath(row: self.eventInfos.count - 1, section: 0), at: UITableView.ScrollPosition.bottom, animated: true)
+        }
+
         switch resultType {
         case .running:
             return
@@ -119,6 +129,11 @@ class ResultViewController: UIViewController, UITableViewDelegate, UITableViewDa
             let completeType = resultType.completeType
             if completeType < 0 {
                 print("イベントの結果\(resultType)を成功として処理しようとしましたが、完了タイプが\(completeType)でした")
+                return
+            }
+
+            if self.nowEventTiming == EventTimingType.end {
+                self.stopTimer()
                 return
             }
 
