@@ -32,11 +32,11 @@ class Def {
     static let lukName = "LUK"
     static let moneyName = "Gold"
     
-    static let statusUpText = "%@が%@上がった！"
-    static let statusDownText = "%@が%@下がった..."
-    static let receiveDamageText = "%@のダメージを受けた！"
-    static let addDamageText = "%@のダメージを与えた！"
-    static let recoverText = "%@回復した！"
-    static let getMoneyText = "%@\(Def.moneyName)手に入れた！"
-    static let loseMoneyText = "%@\(Def.moneyName)失った..."
+    static let statusUpText = "%@が%d上がった！"
+    static let statusDownText = "%@が%d下がった..."
+    static let receiveDamageText = "%dのダメージを受けた！"
+    static let addDamageText = "%dのダメージを与えた！"
+    static let recoverText = "%d回復した！"
+    static let getMoneyText = "%d\(Def.moneyName)手に入れた！"
+    static let loseMoneyText = "%d\(Def.moneyName)失った..."
 }
