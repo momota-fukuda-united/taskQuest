@@ -131,7 +131,7 @@ class ResultViewController: UIViewController, UITableViewDelegate, UITableViewDa
         let cell = tableView.dequeueReusableCell(withIdentifier: "eventCell", for: indexPath) as! EventTableViewCell
         let info = self.eventInfos[indexPath.row]
         
-        cell.set(icon: UIImage(contentsOfFile: info.imageName ?? ""), text: info.text)
+        cell.set(icon: UIImage(named: info.imageName ?? ""), text: info.text)
 
         return cell
     }
