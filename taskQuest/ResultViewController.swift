@@ -18,7 +18,7 @@ class ResultViewController: UIViewController, UITableViewDelegate, UITableViewDa
     @IBOutlet private var eventTableView: UITableView!
 
     private let realm = try! Realm()
-    private let heroStatus = try! Realm().objects(Status.self).filter("id == \(Definition.heroId)").first!
+    private let heroStatus = try! Realm().objects(Status.self).filter("id == \(Def.heroId)").first!
     private var rootEventMasters = try! Realm().objects(RootEventMaster.self)
 
     private var timer: Timer?

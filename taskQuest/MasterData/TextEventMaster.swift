@@ -10,16 +10,29 @@ import Foundation
 import Realm
 import RealmSwift
 
+class TextEventInitHelper {
+    let imageName: String?
+    let text: String
+    let changeStatusEvent: ChangeStatusEventMaster?
+
+    init(imageName: String? = nil, text: String, changeStatusEvent: ChangeStatusEventMaster? = nil) {
+        self.imageName = imageName
+        self.text = text
+        self.changeStatusEvent = changeStatusEvent
+    }
+}
+
 class TextEventMaster: Object, EventMasterProtocol {
     @objc private dynamic var id = 0
 
     @objc private dynamic var consumedAp = 0
-    
+
     private let nextId = RealmOptional<Int>()
     private let nextTypeRow = RealmOptional<Int>()
 
     private let textList = List<String>()
     private let imageNameList = List<String?>()
+    private let changeStatusEventList = List<ChangeStatusEventMaster?>()
 
     override class func primaryKey() -> String? {
         return "id"
@@ -29,7 +42,7 @@ class TextEventMaster: Object, EventMasterProtocol {
         return self.nextTypeRow.value != nil ? EventType(rawValue: self.nextTypeRow.value!) : nil
     }
 
-    convenience init(id: Int, consumedAp: Int = 1, next: (id: Int, type: EventType)?, eventList: [(imageName: String?, text: String)]) {
+    convenience init(id: Int, consumedAp: Int = 1, next: (id: Int, type: EventType)? = nil, eventList: [TextEventInitHelper]) {
         self.init()
 
         self.id = id
@@ -37,9 +50,10 @@ class TextEventMaster: Object, EventMasterProtocol {
         self.nextId.value = next?.id
         self.nextTypeRow.value = next?.type.rawValue
 
-        for (imageName, text) in eventList {
-            self.imageNameList.append(imageName)
-            self.textList.append(text)
+        for helper in eventList {
+            self.imageNameList.append(helper.imageName)
+            self.textList.append(helper.text)
+            self.changeStatusEventList.append(helper.changeStatusEvent)
         }
     }
 
@@ -56,7 +70,7 @@ class TextEventMaster: Object, EventMasterProtocol {
     }
 
     func create() -> EventProtocol {
-        return TextEvent(consumedAp: self.consumedAp, textList: self.textList, imageNameList: self.imageNameList)
+        return TextEvent(consumedAp: self.consumedAp, textList: self.textList, imageNameList: self.imageNameList, changeStatusEventList: self.changeStatusEventList)
     }
 
     func getNextMaster(completeType: Int) -> EventMasterProtocol? {
@@ -64,21 +78,25 @@ class TextEventMaster: Object, EventMasterProtocol {
     }
 
     static let master: [TextEventMaster] = [
-        TextEventMaster(id: 0, consumedAp: 0, next: nil, eventList: [
-            (nil, "冒険開始！"),
-            (Definition.heroNormaiFaceImageName, "今日も頑張るぞ！"),
-            (Definition.heroNormaiFaceImageName, "何が起こるか楽しみだ！"),
+        TextEventMaster(id: 0, consumedAp: 0,  eventList: [
+            TextEventInitHelper(text: "冒険開始！"),
+            TextEventInitHelper(imageName: Def.heroNormaiFaceImageName, text: "今日も頑張るぞ！"),
+            TextEventInitHelper(imageName: Def.heroNormaiFaceImageName, text: "何が起こるか楽しみだ！")
         ]),
-        TextEventMaster(id: 1, consumedAp: 0, next: nil, eventList: [
-            (Definition.heroNormaiFaceImageName, "今日も疲れたけけど、頑張ったな！"),
-            (Definition.heroNormaiFaceImageName, "ゆっくり休もう"),
-            (nil, "冒険終了！")
+        TextEventMaster(id: 1, consumedAp: 0,  eventList: [
+            TextEventInitHelper(imageName: Def.heroNormaiFaceImageName, text: "今日も疲れたけけど、頑張ったな！"),
+            TextEventInitHelper(imageName: Def.heroNormaiFaceImageName, text: "ゆっくり休もう"),
+            TextEventInitHelper(text: "冒険終了！")
         ]),
-        TextEventMaster(id: 1000, next: nil, eventList: [
-            (Definition.heroNormaiFaceImageName, "風が気持ちいい...")
+        TextEventMaster(id: 1000,  eventList: [
+            TextEventInitHelper(imageName: Def.heroNormaiFaceImageName, text: "風が気持ちいい...")
         ]),
-        TextEventMaster(id: 1001, next: nil, eventList: [
-            (Definition.heroNormaiFaceImageName, "何かないかな？")
+        TextEventMaster(id: 1001, eventList: [
+            TextEventInitHelper(imageName: Def.heroNormaiFaceImageName, text: "何かないかな？")
+        ]),
+        TextEventMaster(id: 1002, eventList: [
+            TextEventInitHelper(imageName: Def.heroNormaiFaceImageName, text: "いてっ！"),
+            TextEventInitHelper( text: "石につまずいた...", changeStatusEvent: ChangeStatusEventMaster(hp: -1)),
         ]),
     ]
 }

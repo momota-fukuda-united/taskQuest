@@ -52,4 +52,18 @@ class Status: Object {
     required init(value: Any, schema: RLMSchema) {
         super.init(value: value, schema: schema)
     }
+
+    func change(maxHp: Int = 0, hp: Int = 0, maxAp: Int = 0, ap: Int = 0, atk: Int = 0, def: Int = 0, int: Int = 0, luk: Int = 0, gold: Int = 0) {
+        try! self.realm?.write {
+            self.maxHp = max(1, self.maxHp + maxHp)
+            self.hp = max(0, min(self.maxHp, self.hp + hp))
+            self.maxAp = max(1, self.maxAp + maxAp)
+            self.ap = max(0, min(self.maxAp, self.ap + ap))
+            self.atk = max(1, self.atk + atk)
+            self.def = max(1, self.def + def)
+            self.int = max(1, self.int + int)
+            self.luk = max(1, self.luk + luk)
+            self.gold = max(0, self.gold + gold)
+        }
+    }
 }

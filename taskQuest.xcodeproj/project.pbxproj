@@ -18,7 +18,7 @@
 		A034110E2445B06D0051DAF1 /* TaskDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A034110D2445B06D0051DAF1 /* TaskDetailViewController.swift */; };
 		A03411102445B1150051DAF1 /* Task.swift in Sources */ = {isa = PBXBuildFile; fileRef = A034110F2445B1150051DAF1 /* Task.swift */; };
 		A03411122445B1F10051DAF1 /* TaskType.swift in Sources */ = {isa = PBXBuildFile; fileRef = A03411112445B1F10051DAF1 /* TaskType.swift */; };
-		A03411162445C0990051DAF1 /* Definition.swift in Sources */ = {isa = PBXBuildFile; fileRef = A03411152445C0990051DAF1 /* Definition.swift */; };
+		A03411162445C0990051DAF1 /* Def.swift in Sources */ = {isa = PBXBuildFile; fileRef = A03411152445C0990051DAF1 /* Def.swift */; };
 		A03411182446A0390051DAF1 /* Copyright.txt in Resources */ = {isa = PBXBuildFile; fileRef = A03411172446A0390051DAF1 /* Copyright.txt */; };
 		A0628DC42447FEF6002B9914 /* ReserveDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0628DC32447FEF6002B9914 /* ReserveDelegate.swift */; };
 		A0628DC6244838A5002B9914 /* DoingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0628DC5244838A5002B9914 /* DoingViewController.swift */; };
@@ -46,6 +46,9 @@
 		A0A2FABB2446EB2E002F3C62 /* UISegmentedControl.Extention.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0A2FABA2446EB2E002F3C62 /* UISegmentedControl.Extention.swift */; };
 		A0A2FABD24470F51002F3C62 /* ReserveViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0A2FABC24470F51002F3C62 /* ReserveViewController.swift */; };
 		A0A2FABF2447F05D002F3C62 /* UINavigationController.Extention.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0A2FABE2447F05D002F3C62 /* UINavigationController.Extention.swift */; };
+		A0E9FEBF24501B11002CA0C0 /* ChangeStatusEventMaster.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0E9FEBE24501B11002CA0C0 /* ChangeStatusEventMaster.swift */; };
+		A0E9FEC124501B3C002CA0C0 /* ChangeStatusEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0E9FEC024501B3C002CA0C0 /* ChangeStatusEvent.swift */; };
+		A0E9FEC32450250A002CA0C0 /* EventUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0E9FEC22450250A002CA0C0 /* EventUtil.swift */; };
 		E23FC521FD7D33A376BA1AEC /* Pods_taskQuest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4F373A54D0A3C4A324828662 /* Pods_taskQuest.framework */; };
 /* End PBXBuildFile section */
 
@@ -67,7 +70,7 @@
 		A034110F2445B1150051DAF1 /* Task.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Task.swift; sourceTree = "<group>"; };
 		A03411112445B1F10051DAF1 /* TaskType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskType.swift; sourceTree = "<group>"; };
 		A03411132445BC7D0051DAF1 /* TaskCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskCell.swift; sourceTree = "<group>"; };
-		A03411152445C0990051DAF1 /* Definition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Definition.swift; sourceTree = "<group>"; };
+		A03411152445C0990051DAF1 /* Def.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Def.swift; sourceTree = "<group>"; };
 		A03411172446A0390051DAF1 /* Copyright.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = Copyright.txt; sourceTree = "<group>"; };
 		A0628DC32447FEF6002B9914 /* ReserveDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReserveDelegate.swift; sourceTree = "<group>"; };
 		A0628DC5244838A5002B9914 /* DoingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoingViewController.swift; sourceTree = "<group>"; };
@@ -94,6 +97,9 @@
 		A0A2FABA2446EB2E002F3C62 /* UISegmentedControl.Extention.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UISegmentedControl.Extention.swift; sourceTree = "<group>"; };
 		A0A2FABC24470F51002F3C62 /* ReserveViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReserveViewController.swift; sourceTree = "<group>"; };
 		A0A2FABE2447F05D002F3C62 /* UINavigationController.Extention.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UINavigationController.Extention.swift; sourceTree = "<group>"; };
+		A0E9FEBE24501B11002CA0C0 /* ChangeStatusEventMaster.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeStatusEventMaster.swift; sourceTree = "<group>"; };
+		A0E9FEC024501B3C002CA0C0 /* ChangeStatusEvent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeStatusEvent.swift; sourceTree = "<group>"; };
+		A0E9FEC22450250A002CA0C0 /* EventUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventUtil.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -161,7 +167,7 @@
 				A034110F2445B1150051DAF1 /* Task.swift */,
 				A03411112445B1F10051DAF1 /* TaskType.swift */,
 				A03411132445BC7D0051DAF1 /* TaskCell.swift */,
-				A03411152445C0990051DAF1 /* Definition.swift */,
+				A03411152445C0990051DAF1 /* Def.swift */,
 				A03411172446A0390051DAF1 /* Copyright.txt */,
 				A0A2FAB42446B734002F3C62 /* Status.swift */,
 				A0A2FABA2446EB2E002F3C62 /* UISegmentedControl.Extention.swift */,
@@ -190,6 +196,7 @@
 				A0628DF3244EC8D1002B9914 /* EventSelectorProtocol.swift */,
 				A0628DF5244ED49E002B9914 /* TextEventMaster.swift */,
 				A0628DF7244EF092002B9914 /* EventTimingType.swift */,
+				A0E9FEBE24501B11002CA0C0 /* ChangeStatusEventMaster.swift */,
 			);
 			path = MasterData;
 			sourceTree = "<group>";
@@ -202,6 +209,8 @@
 				A0628DE8244EA053002B9914 /* EventResultType.swift */,
 				A0628DEB244EC125002B9914 /* EmptyEvent.swift */,
 				A0628DED244EC23B002B9914 /* TextEvent.swift */,
+				A0E9FEC024501B3C002CA0C0 /* ChangeStatusEvent.swift */,
+				A0E9FEC22450250A002CA0C0 /* EventUtil.swift */,
 			);
 			path = Event;
 			sourceTree = "<group>";
@@ -330,12 +339,15 @@
 				A03410D924442C140051DAF1 /* TopViewController.swift in Sources */,
 				A0A2FAB52446B734002F3C62 /* Status.swift in Sources */,
 				A0628DC6244838A5002B9914 /* DoingViewController.swift in Sources */,
-				A03411162445C0990051DAF1 /* Definition.swift in Sources */,
+				A0E9FEC32450250A002CA0C0 /* EventUtil.swift in Sources */,
+				A03411162445C0990051DAF1 /* Def.swift in Sources */,
 				A0A2FABF2447F05D002F3C62 /* UINavigationController.Extention.swift in Sources */,
 				A0628DDD244DA0EB002B9914 /* RootEventMaster.swift in Sources */,
 				A0628DDF244DA4FA002B9914 /* EventType.swift in Sources */,
 				A03410D524442C140051DAF1 /* AppDelegate.swift in Sources */,
 				A0628DEE244EC23B002B9914 /* TextEvent.swift in Sources */,
+				A0E9FEBF24501B11002CA0C0 /* ChangeStatusEventMaster.swift in Sources */,
+				A0E9FEC124501B3C002CA0C0 /* ChangeStatusEvent.swift in Sources */,
 				A0628DD524499CBC002B9914 /* StatusMaster.swift in Sources */,
 				A0628DF0244EC580002B9914 /* EventMasterUtil.swift in Sources */,
 				A0628DE7244E9FB9002B9914 /* EventPtorocol.swift in Sources */,

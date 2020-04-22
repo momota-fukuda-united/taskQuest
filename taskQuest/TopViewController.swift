@@ -27,7 +27,7 @@ class TopViewController: UIViewController, UITableViewDelegate, UITableViewDataS
         self.taskTable.delegate = self
         self.taskTable.dataSource = self
         
-        let status = self.status.filter("id == \(Definition.heroId)").first!
+        let status = self.status.filter("id == \(Def.heroId)").first!
         self.statusView.set(status: status)
     }
     

@@ -10,9 +10,9 @@ import Foundation
 import UIKit
 
 class StatusView: UIView {
-    static let firstStatusLabelFormat = "HP %d/%d"
-    static let secondStatusLabelFormat = "ATK %d DEF %d INT %d LUK %d"
-    static let thirdStatusLabelFormat = "%d Gold"
+    static let firstStatusLabelFormat = "\(Def.hpName) %d/%d \(Def.apName) %d/%d"
+    static let secondStatusLabelFormat = "\(Def.atkName) %d \(Def.defName) %d \(Def.intName) %d \(Def.intName) %d"
+    static let thirdStatusLabelFormat = "%d \(Def.moneyName)"
     
     @IBOutlet private var firstStatusLabel: UILabel!
     @IBOutlet private var secondStatusLabel: UILabel!
@@ -39,7 +39,7 @@ class StatusView: UIView {
      */
     
     func set(status: Status) {
-        self.firstStatusLabel.text = String(format: StatusView.firstStatusLabelFormat, status.hp, status.maxHp)
+        self.firstStatusLabel.text = String(format: StatusView.firstStatusLabelFormat, status.hp, status.maxHp, status.ap, status.maxAp)
         self.secondStatusLabel.text = String(format: StatusView.secondStatusLabelFormat, status.atk, status.def, status.int, status.luk)
         self.thirdStatusLabel.text = String(format: StatusView.thirdStatusLabelFormat, status.gold)
     }

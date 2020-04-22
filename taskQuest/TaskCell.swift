@@ -24,8 +24,8 @@ class TaskCell: UITableViewCell {
         self.textLabel?.text = title
 
         let dateText = startingTime != nil ?
-            Definition.dateFormatter.string(from: startingTime!) :
-            Definition.emptyStartingTimeText
+            Def.dateFormatter.string(from: startingTime!) :
+            Def.emptyStartingTimeText
 
         self.detailTextLabel?.text = String(format: "%@ %@", type.text, dateText)
     }
