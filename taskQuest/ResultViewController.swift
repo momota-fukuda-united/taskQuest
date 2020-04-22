@@ -27,6 +27,8 @@ class ResultViewController: UIViewController, UITableViewDelegate, UITableViewDa
     private var nowMaster: EventMasterProtocol!
     private var nowEvent: EventProtocol!
     private var nowEventTiming: EventTimingType!
+    
+    private var isComplete = false
 
     private var eventInfos: [EventInfo] = []
 
@@ -46,7 +48,7 @@ class ResultViewController: UIViewController, UITableViewDelegate, UITableViewDa
 
         self.statusView.set(status: self.heroStatus)
 
-        self.timer = Timer.scheduledTimer(timeInterval: ResultViewController.timerInterval, target: self, selector: #selector(self.updateTimer(_:)), userInfo: nil, repeats: true)
+        self.timer = self.createTimer()
     }
 
     @objc private func updateTimer(_ sender: Any) {
@@ -55,6 +57,7 @@ class ResultViewController: UIViewController, UITableViewDelegate, UITableViewDa
 
     private func pauseTimer() {
         self.timer?.invalidate()
+        self.timer = nil
     }
 
     private func stopTimer() {
@@ -63,7 +66,11 @@ class ResultViewController: UIViewController, UITableViewDelegate, UITableViewDa
     }
 
     private func resumeTimer() {
-        self.timer?.fire()
+        self.timer = self.createTimer()
+    }
+    
+    private func createTimer() -> Timer{
+        return Timer.scheduledTimer(timeInterval: ResultViewController.timerInterval, target: self, selector: #selector(self.updateTimer(_:)), userInfo: nil, repeats: true)
     }
 
     private func onCompleteOneEvent() {
@@ -134,6 +141,8 @@ class ResultViewController: UIViewController, UITableViewDelegate, UITableViewDa
 
             if self.nowEventTiming == EventTimingType.end {
                 self.stopTimer()
+                self.heroStatusData.apply(status: self.heroStatus)
+                self.isComplete = true
                 return
             }
 
@@ -157,11 +166,20 @@ class ResultViewController: UIViewController, UITableViewDelegate, UITableViewDa
 
     @IBAction func onTapPauseOrResumeButton(_ sender: ToggleButton) {
         if sender.toggle() {
-        } else {}
+            self.pauseTimer()
+        } else {
+            self.resumeTimer()
+        }
     }
 
     @IBAction func onTapSkipOrCompleteButton(_ sender: ToggleButton) {
-        if sender.toggle() {
-        } else {}
+        if !self.isComplete {
+            while !self.isComplete {
+                self.update()
+            }
+            self.skipOrCompleteButton.toggle()
+        } else {
+            self.navigationController?.popToRootViewController(animated: true)
+        }
     }
 }
