@@ -50,5 +50,6 @@ class RootEventMaster: Object, EventMasterProtocol {
         RootEventMaster(id: 1, timing: .end, bodyEventId: 1, type: .text),
         RootEventMaster(id: 2, timing: .random, bodyEventId: 1000, type: .text),
         RootEventMaster(id: 3, timing: .random, bodyEventId: 1001, type: .text),
+        RootEventMaster(id: 4, timing: .random, bodyEventId: 1002, type: .text),
     ]
 }
