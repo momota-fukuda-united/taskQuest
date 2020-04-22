@@ -10,6 +10,6 @@ import UIKit
 
 class EmptyEvent: EventProtocol {
     func excute(playerStatus: Status) -> EventResultData {
-        return (.complete, [])
+        return (.empty, [])
     }
 }

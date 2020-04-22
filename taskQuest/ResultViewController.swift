@@ -39,7 +39,7 @@ class ResultViewController: UIViewController, UITableViewDelegate, UITableViewDa
         self.eventTableView.dataSource = self
 
         self.nowMaster = self.getRandomEventMaster(timing: .start)
-        self.goNextEvent()
+        self.initEvent()
         self.pauseOrResumeButton.set(firstStateText: "一時停止", secondStateText: "再開")
         self.skipOrCompleteButton.set(firstStateText: "スキップ", secondStateText: "終了")
 
@@ -64,7 +64,7 @@ class ResultViewController: UIViewController, UITableViewDelegate, UITableViewDa
         self.nowMaster = self.getRandomEventMaster(timing: self.remainingEvent <= 0 ? .end : .random)
     }
 
-    private func goNextEvent() {
+    private func initEvent() {
         self.nowEvent = self.nowMaster.create()
     }
 
@@ -77,7 +77,7 @@ class ResultViewController: UIViewController, UITableViewDelegate, UITableViewDa
             self.nowMaster = next!
         }
 
-        self.goNextEvent()
+        self.initEvent()
     }
 
     private func getRandomEventMaster(timing: EventTimingType) -> RootEventMaster {
@@ -104,7 +104,12 @@ class ResultViewController: UIViewController, UITableViewDelegate, UITableViewDa
         case .failed:
             /// @todo 専用の処理
             return
-
+        case .empty:
+            // 空イベントだったので次のイベントに進めてもう1度更新
+            self.goNextEventMaster(completeType: EventResultType.complete.rawValue)
+            self.update()
+            return
+            
         default:
             // 残りは全て成功なはず
             let completeType = resultType.completeType
