@@ -10,7 +10,7 @@ import RealmSwift
 import UIKit
 
 class ResultViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
-    static let timerInterval: TimeInterval = 5
+    static let timerInterval: TimeInterval = 4
 
     @IBOutlet private var statusView: StatusView!
     @IBOutlet private var pauseOrResumeButton: ToggleButton!
