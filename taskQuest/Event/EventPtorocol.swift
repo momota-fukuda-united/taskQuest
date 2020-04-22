@@ -12,7 +12,7 @@ typealias EventInfo = (imageName: String?, text: String)
 typealias EventResultData = (result: EventResultType, infos: [EventInfo])
 
 protocol EventProtocol {
-    func excute(playerStatus: StatusData) -> EventResultData
+    func excute(playerStatus: Status) -> EventResultData
     
-    func onComplete(playerStatus: StatusData)
+    func onComplete(playerStatus: Status)
 }

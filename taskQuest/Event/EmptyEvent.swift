@@ -9,9 +9,9 @@
 import UIKit
 
 class EmptyEvent: EventProtocol {
-    func excute(playerStatus: StatusData) -> EventResultData {
+    func excute(playerStatus: Status) -> EventResultData {
         return (.empty, [])
     }
 
-    func onComplete(playerStatus: StatusData) {}
+    func onComplete(playerStatus: Status) {}
 }

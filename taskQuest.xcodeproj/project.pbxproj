@@ -49,6 +49,7 @@
 		A0E9FEBF24501B11002CA0C0 /* ChangeStatusEventMaster.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0E9FEBE24501B11002CA0C0 /* ChangeStatusEventMaster.swift */; };
 		A0E9FEC124501B3C002CA0C0 /* ChangeStatusEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0E9FEC024501B3C002CA0C0 /* ChangeStatusEvent.swift */; };
 		A0E9FEC32450250A002CA0C0 /* EventUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0E9FEC22450250A002CA0C0 /* EventUtil.swift */; };
+		A0E9FEC524503F08002CA0C0 /* Status.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0E9FEC424503F08002CA0C0 /* Status.swift */; };
 		E23FC521FD7D33A376BA1AEC /* Pods_taskQuest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4F373A54D0A3C4A324828662 /* Pods_taskQuest.framework */; };
 /* End PBXBuildFile section */
 
@@ -100,6 +101,7 @@
 		A0E9FEBE24501B11002CA0C0 /* ChangeStatusEventMaster.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeStatusEventMaster.swift; sourceTree = "<group>"; };
 		A0E9FEC024501B3C002CA0C0 /* ChangeStatusEvent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeStatusEvent.swift; sourceTree = "<group>"; };
 		A0E9FEC22450250A002CA0C0 /* EventUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventUtil.swift; sourceTree = "<group>"; };
+		A0E9FEC424503F08002CA0C0 /* Status.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Status.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -181,6 +183,7 @@
 				A0628DE0244E90E7002B9914 /* EventTableViewCell.swift */,
 				A0628DE1244E90E7002B9914 /* EventTableViewCell.xib */,
 				A0628DF9244EFB78002B9914 /* UIExtension.swift */,
+				A0E9FEC424503F08002CA0C0 /* Status.swift */,
 			);
 			path = taskQuest;
 			sourceTree = "<group>";
@@ -333,6 +336,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A0E9FEC524503F08002CA0C0 /* Status.swift in Sources */,
 				A0628DEC244EC125002B9914 /* EmptyEvent.swift in Sources */,
 				A0A2FAB62446E38F002F3C62 /* TaskCell.swift in Sources */,
 				A0628DF2244EC89E002B9914 /* GenericEventMasterSelector.swift in Sources */,

@@ -28,7 +28,7 @@ class TopViewController: UIViewController, UITableViewDelegate, UITableViewDataS
         self.taskTable.dataSource = self
         
         let status = self.status.filter("id == \(Def.heroId)").first!
-        self.statusView.set(status: status)
+        self.statusView.set(status: status.create())
     }
     
     override func viewWillAppear(_ animated: Bool) {

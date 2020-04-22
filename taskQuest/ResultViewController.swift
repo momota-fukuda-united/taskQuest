@@ -18,7 +18,8 @@ class ResultViewController: UIViewController, UITableViewDelegate, UITableViewDa
     @IBOutlet private var eventTableView: UITableView!
 
     private let realm = try! Realm()
-    private let heroStatus = try! Realm().objects(StatusData.self).filter("id == \(Def.heroId)").first!
+    private let heroStatusData = try! Realm().objects(StatusData.self).filter("id == \(Def.heroId)").first!
+    private var heroStatus: Status!
     private var rootEventMasters = try! Realm().objects(RootEventMaster.self)
 
     private var timer: Timer?
@@ -32,6 +33,8 @@ class ResultViewController: UIViewController, UITableViewDelegate, UITableViewDa
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        self.heroStatus = self.heroStatusData.create()
+        
         self.eventTableView.delegate = self
         self.eventTableView.dataSource = self
 
