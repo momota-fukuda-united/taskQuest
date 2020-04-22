@@ -10,23 +10,29 @@ import UIKit
 
 class EventTableViewCell: UITableViewCell {
     static let cellId = "eventCell"
-    
+
     @IBOutlet private var iconView: UIImageView!
     @IBOutlet private var textView: UITextView!
 
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
 
+        self.loadNib()
     }
-    
+
     required init?(coder: NSCoder) {
         super.init(coder: coder)
-        
 
+        self.loadNib()
     }
-    
 
-    
+    private func loadNib() {
+        let nib = UINib(nibName: self.className, bundle: Bundle.main)
+        let cell = nib.instantiate(withOwner: self, options: nil).first! as! UIView
+        cell.frame = self.bounds
+        self.addSubview(cell)
+    }
+
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -37,10 +43,10 @@ class EventTableViewCell: UITableViewCell {
 
         // Configure the view for the selected state
     }
-    
-    func set(icon: UIImage?, text: String){
+
+    func set(icon: UIImage?, text: String) {
         self.textView.text = text
-        
+
         // 画像がなければ非表示
         self.iconView.isHidden = icon == nil
         self.iconView.image = icon

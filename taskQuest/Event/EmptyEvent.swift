@@ -9,7 +9,7 @@
 import UIKit
 
 class EmptyEvent: EventProtocol {
-    func excute(playerStatus: Status, table: UITableView) -> EventResultType {
-        return .complete
+    func excute(playerStatus: Status) -> EventResultData {
+        return (.complete, [])
     }
 }

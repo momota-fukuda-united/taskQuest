@@ -25,6 +25,8 @@ class ResultViewController: UIViewController, UITableViewDelegate, UITableViewDa
 
     private var nowMaster: EventMasterProtocol!
     private var nowEvent: EventProtocol!
+    
+    private var eventInfos: [EventInfo] = []
 
     // 仮
     private var remainingEvent = 10
@@ -87,9 +89,16 @@ class ResultViewController: UIViewController, UITableViewDelegate, UITableViewDa
     }
 
     private func update() {
-        let result = self.nowEvent.excute(playerStatus: self.heroStatus, table: self.eventTableView)
+        let results = self.nowEvent.excute(playerStatus: self.heroStatus)
+        let resultType = results.result
+        let infos = results.infos
+        
+        self.eventInfos.append(contentsOf: infos)
+        for _ in 0 ..< infos.count {
+            self.eventTableView.apend(cellClass: EventTableViewCell.self, id: EventTableViewCell.cellId)
+        }
 
-        switch result {
+        switch resultType {
         case .running:
             return
         case .failed:
@@ -98,9 +107,9 @@ class ResultViewController: UIViewController, UITableViewDelegate, UITableViewDa
 
         default:
             // 残りは全て成功なはず
-            let completeType = result.completeType
+            let completeType = resultType.completeType
             if completeType < 0 {
-                print("イベントの結果\(result)を成功として処理しようとしましたが、完了タイプが\(completeType)でした")
+                print("イベントの結果\(resultType)を成功として処理しようとしましたが、完了タイプが\(completeType)でした")
                 return
             }
 
@@ -110,11 +119,14 @@ class ResultViewController: UIViewController, UITableViewDelegate, UITableViewDa
     }
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 0
+        return self.eventInfos.count
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "eventCell", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "eventCell", for: indexPath) as! EventTableViewCell
+        let info = self.eventInfos[indexPath.row]
+        
+        cell.set(icon: UIImage(contentsOfFile: info.imageName ?? ""), text: info.text)
 
         return cell
     }

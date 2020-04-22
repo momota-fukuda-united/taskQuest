@@ -20,17 +20,13 @@ class TextEvent: EventProtocol {
         self.imageNameList = imageNameList
     }
     
-    func excute(playerStatus: Status, table: UITableView) -> EventResultType {
+    func excute(playerStatus: Status) -> EventResultData {
         let text = self.textList[self.index]
         let imageName = self.imageNameList[self.index]
         
-        let image = UIImage(named: imageName ?? "")
-        
-        let cell: EventTableViewCell = table.apend(id: EventTableViewCell.cellId)
-        
-        cell.set(icon: image, text: text)
-        
         self.index += 1
-        return self.index < self.textList.count ? .running : .complete
+        let result: EventResultType = self.index < self.textList.count ? .running : .complete
+        
+        return (result, [(imageName, text)])
     }
 }

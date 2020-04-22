@@ -8,18 +8,21 @@
 
 import UIKit
 
+extension UIView {
+    var className: String {
+        return String(describing: type(of: self))
+    }
+}
+
 extension UITableView {
-    func apend<T: UITableViewCell>(id: String, section: Int = 0) -> T {
+    func apend(cellClass: AnyClass, id: String, section: Int = 0) {
         self.beginUpdates()
 
-        self.register(T.self, forCellReuseIdentifier: id)
+        self.register(cellClass, forCellReuseIdentifier: id)
         let newRow = self.numberOfRows(inSection: section)
         let indexPath = IndexPath(row: newRow, section: section)
         self.insertRows(at: [indexPath], with: .automatic)
-        let cell = self.dequeueReusableCell(withIdentifier: id, for: indexPath) as! T
 
         self.endUpdates()
-
-        return cell
     }
 }

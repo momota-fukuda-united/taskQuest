@@ -18,10 +18,6 @@ class StatusView: UIView {
     @IBOutlet private var secondStatusLabel: UILabel!
     @IBOutlet private var thirdStatusLabel: UILabel!
     
-    var className: String {
-        return String(describing: type(of: self))
-    }
-    
     override init(frame: CGRect) {
         super.init(frame: frame)
         

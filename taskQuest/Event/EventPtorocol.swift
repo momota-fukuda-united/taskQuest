@@ -8,6 +8,9 @@
 
 import UIKit
 
+typealias EventInfo = (imageName: String?, text: String)
+typealias EventResultData = (result: EventResultType, infos: [EventInfo])
+
 protocol EventProtocol {
-    func excute(playerStatus: Status, table: UITableView) -> EventResultType
+    func excute(playerStatus: Status) -> EventResultData
 }
